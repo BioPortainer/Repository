@@ -1,5 +1,5 @@
 {
-  "name": "01.03-GIT Remove Local Repository",
+  "name": "01.03 GIT Remove Local Repository",
   "script_path": "conf/scripts/rm.sh",
   "description": "Remove files from the working tree and from the index",
   "working_directory": "/root/workdir/data/",
