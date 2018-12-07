@@ -1,0 +1,111 @@
+{
+  "name": "04-Bowtie2 2.3.4.3",
+  "script_path": "conf/scripts/bowtie2.sh",
+  "description": "Ultrafast and memory-efficient tool for aligning sequencing reads to long reference sequences. It is particularly good at aligning reads of about 50 up to 100s or 1,000s of characters, and particularly good at aligning to relatively long (e.g. mammalian) genomes",
+  "working_directory": "./",
+  "parameters": [
+    {
+      "name": "Index prefix",
+      "required": true,
+      "param": "-x",
+      "description": "Index filename prefix (minus trailing .X.bt2). NOTE: Bowtie 1 and Bowtie 2 indexes are not compatible"
+    },
+    {
+      "name": "#1 mates",
+      "param": "-1",
+      "description": "Files with #1 mates, paired with files in <m2>. Could be gzip'ed (extension: .gz) or bzip2'ed (extension: .bz2)",
+      "type": "file_upload"
+    },
+    {
+      "name": "#2 mates",
+      "param": "-2",
+      "description": "Files with #2 mates, paired with files in <m1>. Could be gzip'ed (extension: .gz) or bzip2'ed (extension: .bz2)",
+      "type": "file_upload"
+    },
+    {
+      "name": "Unpaired",
+      "param": "-U",
+      "description": "Files with unpaired reads. Could be gzip'ed (extension: .gz) or bzip2'ed (extension: .bz2)",
+      "type": "file_upload"
+    },
+    {
+      "name": "Interleaved",
+      "param": "--interleaved",
+      "description": "Files with interleaved paired-end FASTQ reads. Could be gzip'ed (extension: .gz) or bzip2'ed (extension: .bz2)",
+      "type": "file_upload"
+    },
+    {
+      "name": "SAM output",
+      "param": "-S",
+      "required": true,
+      "default": "stdout",
+      "description": "File for SAM output (default: stdout)"
+    },
+    {
+      "name": "Skip",
+      "param": "-s",
+      "description": "Skip (i.e. do not align) the first <int> reads or pairs in the input."
+    },
+    {
+      "name": "Only first n",
+      "param": "-u",
+      "description": "Align the first <int> reads or read pairs from the input (after the -s/--skip reads or pairs have been skipped), then stop."
+    },
+    {
+      "name": "Trim 5'",
+      "param": "-5",
+      "description": "Trim <int> bases from 5’ (left) end of each read before alignment (default: 0)."
+    },
+    {
+      "name": "trim 3'",
+      "param": "-3",
+      "description": "Trim <int> bases from 3’ (right) end of each read before alignment (default: 0)."
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Input is FASTQ",
+      "param": "-q",
+      "description": "Reads (specified with <m1>, <m2>, <s>) are FASTQ files.",
+      "no_value": true,
+      "default": true
+    },
+    {
+      "name": "Input is FASTA",
+      "param": "-f",
+      "description": "Reads (specified with <m1>, <m2>, <s>) are FASTA files.",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Input is raw",
+      "param": "-r",
+      "description": "Reads (specified with <m1>, <m2>, <s>) are files with one input sequence per line, without any other information (no read names, no qualities).",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Phred 33",
+      "param": "--phred33",
+      "description": "Input qualities are ASCII chars equal to the Phred quality plus 33. ",
+      "no_value": true,
+      "default": true
+    },
+    {
+      "name": "Phred 64",
+      "param": "--phred64",
+      "description": "Input qualities are ASCII chars equal to the Phred quality plus 64.",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "--help",
+      "description": "Help.",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

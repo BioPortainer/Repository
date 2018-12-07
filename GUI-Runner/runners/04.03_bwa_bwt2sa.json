@@ -1,0 +1,17 @@
+{
+  "name": "04.03-BWAtools: bwa bwt2sa",
+  "script_path": "conf/scripts/bwa_bwt2sa.sh",
+  "description": "Generates sa files from bwt and Occ files",
+  "working_directory": "./",
+  "parameters": [
+    {
+      "name": "BWT input",
+      "type": "file_upload",
+      "description": "BWT input files"
+    },
+    {
+      "name": "SA output",
+      "description": "SA output files"
+    }
+  ]
+}

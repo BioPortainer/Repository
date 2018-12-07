@@ -1,0 +1,17 @@
+{
+  "name": "04.05-BWAtools: bwa fa2pac",
+  "script_path": "conf/scripts/bwa_fa2pac.sh",
+  "description": "Convert FASTA to PAC format",
+  "working_directory": "./",
+  "parameters": [
+    {
+      "name": "Fasta input",
+      "type": "file_upload",
+      "description": "Fasta input"
+    },
+    {
+      "name": "PAC output",
+      "description": "PAC output"
+    }
+  ]
+}

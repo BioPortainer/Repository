@@ -1,0 +1,17 @@
+{
+  "name": "04.10-BWAtools: bwa pac2bwtgen",
+  "script_path": "conf/scripts/bwa_pac2bwtgen.sh",
+  "description": "Alternative algorithm for generating BWT",
+  "working_directory": "./",
+  "parameters": [
+    {
+      "name": "PAC input",
+      "type": "file_upload",
+      "description": "PAC input"
+    },
+    {
+      "name": "BWT output",
+      "description": "bwt output"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "name": "07-Cufflinks",
+  "script_path": "conf/scripts/cufflinks.sh",
+  "description": "Assembles transcripts, estimates their abundances, and tests for differential expression and regulation in RNA-Seq samples",
+  "working_directory": "./",
+  "parameters": [
+    {
+      "name": "Sam input",
+      "type": "file_upload",
+      "default": "./",      
+      "description": "Sam input file"
+    },
+    {
+      "name": "Output dir",
+      "param": "-o",
+      "default": "./",      
+      "description": "Write all output files to this directory"
+    },
+    {
+      "name": "Threads",
+      "param": "-p",
+      "default": "1",     
+      "description": "Number of threads used during analysis"
+    },
+    {
+      "name": "Library type",
+      "param": "--library-type",
+      "description": "library prep used for input reads",
+      "type": "list",
+      "default": "fr-unstranded",
+      "values": [
+        "ff-firststrand",
+        "ff-secondstrand",
+        "ff-unstranded",
+        "fr-firststrand",
+        "fr-secondstrand",
+        "fr-unstranded",
+        "transfrags"
+      ]
+    },
+    {
+      "name": "Norm method",
+      "param": "--library-norm-method",
+      "description": "Method used to normalize library sizes",
+      "type": "list",
+      "values": [
+        "classic",
+        "FPKM"
+      ]
+    }, 
+    {
+      "name": "Seed",
+      "param": "--seed",
+      "description": "Value of random number generator seed",
+      "default": "0"
+    },
+    {
+      "name": "GTF reference",
+      "param": "-G",
+      "description": "Quantitate against reference transcript annotations"
+    },
+    {
+      "name": "GTF guide",
+      "type": "file_upload",
+      "param": "-g",
+      "description": "Use reference transcript annotation to guide assembly"
+    },
+    {
+      "name": "Mask file",
+      "param": "-M",
+      "description": "Ignore all alignment within transcripts in this file"
+    },
+    {
+      "name": "Bias correction",
+      "param": "-b",
+      "description": "Use bias correction - reference fasta required",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Multi read correct",
+      "param": "-u",
+      "description": "Use 'rescue method' for multi-reads (more accurate)",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Prints the help message and exits",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

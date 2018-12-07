@@ -1,0 +1,88 @@
+{
+  "name": "04.12-BWAtools: bwa sampe",
+  "script_path": "conf/scripts/bwa_sampe.sh",
+  "description": "Generate alignment (paired ended)",
+  "working_directory": "./",
+  "parameters": [
+    {
+      "name": "Prefix",
+      "description": "Index prefix name"
+    },
+    {
+      "name": "Input sai 1",
+      "type": "file_upload",
+      "description": "Input sai 1 file"
+    },
+    {
+      "name": "Input sai 2",
+      "type": "file_upload",
+      "description": "Input sai 2 file"
+    },
+    {
+      "name": "Input read 1",
+      "type": "file_upload",
+      "description": "Input reads paired 1"
+    },
+    {
+      "name": "Input read 2",
+      "type": "file_upload",
+      "description": "Input reads paired 2"
+    },
+    {
+      "name": "Sam output",
+      "param": "-f",
+      "description": "Sam file to output results to [stdout]"
+    },
+    {
+      "name": "Max insert",
+      "param": "-a",
+      "description": "Maximum insert size"
+    },
+    {
+      "name": "Max one end",
+      "param": "-o",
+      "description": "Maximum occurrences for one end"
+    },
+    {
+      "name": "Max paired",
+      "param": "-n",
+      "description": "Maximum hits to output for paired reads"
+    },
+    {
+      "name": "Max discordant",
+      "param": "-N",
+      "description": "Maximum hits to output for discordant pairs"
+    },
+    {
+      "name": "Chimeric prior",
+      "param": "-c",
+      "description": "Prior of chimeric rate (lower bound)"
+    },
+    {
+      "name": "Read header",
+      "param": "-r",
+      "description": "Read group header line such as `@RG\tID:foo\tSM:bar'"
+    },
+    {
+      "name": "Preload",
+      "param": "-P",
+      "description": "Preload index into memory (for base-space reads only)",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "No Smith-Waterman",
+      "param": "-S",
+      "description": "Disable Smith-Waterman for the unmapped mate",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Size estimate",
+      "param": "-A",
+      "description": "Disable insert size estimate (force -s)",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

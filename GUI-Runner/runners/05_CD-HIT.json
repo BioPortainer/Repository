@@ -1,0 +1,98 @@
+{
+  "name": "05-CD-HIT",
+  "script_path": "conf/scripts/D18_CD-HIT.sh",
+  "description": "Very widely used program for clustering and comparing protein or nucleotide sequences",
+  "working_directory": "./",
+  "parameters": [
+    {
+      "name": "Input",
+      "type": "file_upload",
+      "param": "-i",
+      "description": "Input filename in fasta format, required",
+      "required": true
+    },
+    {
+      "name": "Output",
+      "param": "-o",
+      "required": true,
+      "description": "Output filename, required"
+    },
+    {
+      "name": "Identity",
+      "param": "-c",
+      "default": "0.9",
+      "description": "Sequence identity threshold, default 0.9 this is the default cd-hit's 'global sequence identity' calculated as: number of identical amino acids in alignment divided by the full length of the shorter sequence"
+    },
+    {
+      "name": "Global",
+      "param": "-G",
+      "description": "Use global sequence identity, default 1",
+      "default": 1
+    },
+    {
+      "name": "Band widht",
+      "param": "-b",
+      "default": "20",
+      "description": "band_width of alignment, default 20"
+    },
+    {
+      "name": "Memory limit",
+      "param": "-M",
+      "default": "800",
+      "description": "Memory limit (in MB) for the program, default 800; 0 for unlimitted"
+    },
+    {
+      "name": "Threads",
+      "param": "-T",
+      "default": "1",
+      "description": "Number of threads, default 1; with 0, all CPUs will be used"
+    },
+    {
+      "name": "Throw away",
+      "param": "-l",
+    "default": "20",
+      "description": "length of throw_away_sequences, default 10"
+    },
+    {
+      "name": "Word length",
+      "param": "-n",
+      "default": "5",
+      "description": "Word length, default 5, see user's guide for choosing it"
+    },
+    {
+      "name": "Tolerance",
+      "param": "-t",
+      "default": "2",
+      "description": "Tolerance for redundance, default 2"
+    },
+    {
+      "name": "Desc length",
+      "param": "-d",
+      "default": "20",
+      "description": "Length of description in .clstr file, default 20. If set to 0, it takes the fasta defline and stops at first space"
+    },
+    {
+      "name": "Other parameters",
+      "param": "-n",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "no_value": true,
+      "default": false,
+      "description": "Print the help"
+    }
+  ]
+}
+
+
+
+
+
+
+
+
+
+
+

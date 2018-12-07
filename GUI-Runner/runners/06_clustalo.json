@@ -1,0 +1,103 @@
+{
+  "name": "06-Clustalo: Clustal Omega",
+  "script_path": "conf/scripts/clustalo.sh",
+  "description": "Multiple alignment of nucleic acid and protein sequences",
+  "working_directory": "./",
+  "requires_terminal": true,
+  "parameters": [
+    {
+      "name": "Input file sequence",
+      "param": "-i",
+      "type": "file_upload",
+      "description": "Multiple sequence input file (- for stdin)"
+    },
+    {
+      "name": "HMM Input files",
+      "param": "--hmm",
+      "description": "HMM input files",
+      "type": "file_upload"
+    },
+    {
+      "name": "Profile1",
+      "param": "--p1",
+      "description": "Pre-aligned multiple sequence file (aligned columns will be kept fixed)"
+    },
+    {
+      "name": "Profile2",
+      "param": "--p2",
+      "description": "Pre-aligned multiple sequence file (aligned columns will be kept fixed)"
+    },
+    {
+      "name": "Sequence type",
+      "param": "-t",
+      "description": "Force a sequence type (default: auto)",
+      "type": "list",
+      "values": [
+        "Protein",
+        "RNA",
+        "DNA"
+      ]
+    },
+    {
+      "name": "Input format",
+      "param": "--infmt",
+      "description": "Force a sequence file format (default: auto)",
+      "type": "list",
+      "values": [
+        "fa",
+        "clu",
+        "msf",
+        "phy",
+        "selex",
+        "st",
+        "vie"
+      ]
+    },
+    {
+      "name": "Output file",
+      "param": "-o",
+      "description": "Multiple sequence alignment output file (default: stdout)",
+      "default": "stdout"
+    },
+    {
+      "name": "Output format",
+      "param": "--outfmt",
+      "description": "MSA output file format (default: fasta)",
+      "type": "list",
+      "values": [
+        "fa",
+        "clu",
+        "msf",
+        "phy",
+        "selex",
+        "st",
+        "vie"
+      ]
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Is profile",
+      "param": "--is-profile",
+      "no_value": true,
+      "description": "Disable check if profile, force profile (default no)",
+      "default": false
+    },
+    {
+      "name": "Dealign input",
+      "param": "--dealign",
+      "description": "Dealign input sequences",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "--help",
+      "description": "Help.",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

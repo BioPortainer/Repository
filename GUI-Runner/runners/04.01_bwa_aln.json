@@ -1,0 +1,160 @@
+{
+  "name": "04.01-BWAtools: bwa aln",
+  "script_path": "conf/scripts/bwa_aln.sh",
+  "description": "Find the SA coordinates of the input reads",
+  "working_directory": "./",
+  "parameters": [
+    {
+      "name": "Index prefix",
+      "required": true,
+      "description": "Index prefix"
+    },
+    {
+      "name": "Query fastq",
+      "required": true,
+      "description": "Query fastq file",
+      "type": "file_upload"
+    },
+    {
+      "name": "Sai output",
+      "required": true,
+      "param": "-f",
+      "description": "File to write output to instead of stdout"
+    },
+    {
+      "name": "Max diff",
+      "param": "-n",
+      "description": "Max #diff (int) or missing prob under 0.02 err rate (float) [0.04]"
+    },
+    {
+      "name": "Max gap opens",
+      "param": "-o",
+      "description": "Maximum number or fraction of gap opens [1]"
+    },
+    {
+      "name": "Max gap extensions",
+      "param": "-e",
+      "description": "Maximum number of gap extensions, -1 for disabling long gaps [-1]"
+    },
+    {
+      "name": "Indel within",
+      "param": "-i",
+      "description": "Do not put an indel within INT bp towards the ends [5]"
+    },
+    {
+      "name": "Long deletion",
+      "param": "-d",
+      "description": "Maximum occurrences for extending a long deletion [10]"
+    },
+    {
+      "name": "Seed length",
+      "param": "-l",
+      "description": "Seed length [32]"
+    },
+    {
+      "name": "Max seed diff",
+      "param": "-k",
+      "description": "Maximum differences in the seed [2]"
+    },
+    {
+      "name": "Max entries",
+      "param": "-m",
+      "description": "Maximum entries in the queue [2000000]"
+    },
+    {
+      "name": "Threads",
+      "param": "-t",
+      "description": "Number of threads [1]"
+    },
+    {
+      "name": "Mismatch",
+      "param": "-M",
+      "description": "Mismatch penalty [3]"
+    },
+    {
+      "name": "Gap open",
+      "param": "-O",
+      "description": "Gap open penalty [11]"
+    },
+    {
+      "name": "Gap extension",
+      "param": "-E",
+      "description": "Gap extension penalty [4]"
+    },
+    {
+      "name": "Best hits stop",
+      "param": "-R",
+      "description": "Stop searching when there are >INT equally best hits [30]"
+    },
+    {
+      "name": "Quality threshould",
+      "param": "-q",
+      "description": "Quality threshold for read trimming down to 35bp [0]"
+    },
+    {
+      "name": "Barcode size",
+      "param": "-B",
+      "description": "Length of barcode"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Long deletions",
+      "param": "-L",
+      "description": "Log-scaled gap penalty for long deletions",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Diff hits",
+      "param": "-N",
+      "description": "Non-iterative mode: search for all n-difference hits (slooow)",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Illumina 1.3",
+      "param": "-I",
+      "description": "The input is in the Illumina 1.3+ FASTQ-like format",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "BAM",
+      "param": "-b",
+      "description": "The input read file is in the BAM format",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Single-end",
+      "param": "-0",
+      "description": "Use single-end reads only (effective with -b)",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "1st read",
+      "param": "-1",
+      "description": "Use the 1st read in a pair (effective with -b)",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "2nd read",
+      "param": "-2",
+      "description": "Use the 2nd read in a pair (effective with -b)",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Casava",
+      "param": "-Y",
+      "description": "Filter Casava-filtered sequences",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

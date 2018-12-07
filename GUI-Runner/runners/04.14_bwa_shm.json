@@ -1,0 +1,31 @@
+{
+  "name": "04.14-BWAtools: bwa shm",
+  "script_path": "conf/scripts/bwa_shm.sh",
+  "description": "BWA-SW for long queries",
+  "working_directory": "./",
+  "parameters": [
+    {
+      "name": "Index prefix",
+      "description": "Index basename"
+    },
+    {
+      "name": "Temp",
+      "param": "-f",
+      "description": "Temporary file to reduce peak memory"
+    },
+    {
+      "name": "Destroy",
+      "param": "-d",
+      "description": "Destroy all indices in shared memory",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "List",
+      "param": "-l",
+      "description": "List names of indices in shared memory",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

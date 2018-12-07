@@ -1,0 +1,17 @@
+{
+  "name": "01.01-GIT Activate Local Repository",
+  "script_path": "conf/scripts/workdir_activate.sh",
+  "description": "Choose your working repository",
+  "working_directory": "./",
+  "parameters": [
+    {
+      "name": "Choose GIT Repository",
+      "description": "List GIT Repositories",
+      "type": "list",
+      "values": {
+        "script": "ls conf/scripts"
+      },
+      "required": true
+    }
+  ]
+}

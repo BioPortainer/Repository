@@ -1,0 +1,67 @@
+{
+  "name": "04.06-BWAtools: bwa fastmap",
+  "script_path": "conf/scripts/bwa_fastmap.sh",
+  "description": "Identify super-maximal exact matches",
+  "working_directory": "./",
+  "requires_terminal": false,
+  "parameters": [
+    {
+      "name": "Index prefix",
+      "required": true,
+      "description": "Index prefix file"
+    },
+    {
+      "name": "Query fastq",
+      "required": true,
+      "description": "Query fastq file",
+      "type": "file_upload"
+    },
+    {
+      "name": "Min length",
+      "param": "-l",
+      "description": "Min SMEM length to output"
+    },
+    {
+      "name": "Max interval",
+      "param": "-W",
+      "description": "Max interval size to find coordinates"
+    },
+    {
+      "name": "Min SMEM",
+      "param": "-i",
+      "description": "Min SMEM interval size"
+    },
+    {
+      "name": "Max MEM",
+      "param": "-L",
+      "description": "Max MEM length"
+    },
+    {
+      "name": "Longer MEM",
+      "param": "-I",
+      "description": "Stop if MEM is longer than -l with a size less than INT"
+    }
+  ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+{
+  "name": "04.07-BWAtools: bwa index",
+  "script_path": "conf/scripts/bwa_index.sh",
+  "description": "Index sequences in the FASTA format",
+  "working_directory": "./",
+  "parameters": [
+    {
+      "name": "Ref genome",
+      "description": "Rerence genome file",
+      "type": "file_upload"
+    },
+    {
+      "name": "Algorithm",
+      "param": "-a",
+      "description": "BWT construction algorithm: bwtsw, is or rb2,",
+      "type": "list",
+      "values": [
+        "bwtsw",
+        "rb2"
+      ]
+    },
+    {
+      "name": "Block size",
+      "param": "-b",
+      "description": "Block size for the bwtsw algorithm (effective with -a bwtsw)"
+    },
+    {
+      "name": "Prefix",
+      "param": "-p",
+      "description": "Prefix of the index [same as fasta name]"
+    },
+    {
+      "name": "Name type",
+      "param": "-6",
+      "description": "Index files named as <in.fasta>.64.* instead of <in.fasta>.* ",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

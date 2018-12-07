@@ -1,0 +1,135 @@
+{
+  "name": "03-Bowtie 1.2.2",
+  "script_path": "conf/scripts/bowtie.sh",
+  "description": "Ultrafast, memory-efficient short read aligner geared toward quickly aligning large sets of short DNA sequences (reads) to large genomes. It aligns 35-base-pair reads to the human genome at a rate of 25 million reads per hour on a typical workstation",
+  "working_directory": "./",
+  "parameters": [
+    {
+      "name": "Index basename",
+      "required": true,
+      "description": "The basename of the index to be searched. The basename is the name of any of the index files up to but not including the final .1.ebwt / .rev.1.ebwt / etc. bowtie looks for the specified index first in the current directory, then in the indexes subdirectory under the directory where the bowtie executable is located, then looks in the directory specified in the BOWTIE_INDEXES environment variable"
+    },
+    {
+      "name": "#1 mates",
+      "param": "-1",
+      "description": "Comma-separated list of files containing the #1 mates (filename usually includes _1), or, if -c is specified, the mate sequences themselves. E.g., this might be flyA_1.fq,flyB_1.fq, or, if -c is specified, this might be GGTCATCCT,ACGGGTCGT. Sequences specified with this option must correspond file-for-file and read-for-read with those specified in <m2>. Reads may be a mix of different lengths. If - is specified, bowtie will read the #1 mates from the 'standard in' filehandle.",
+      "type": "file_upload"
+    },
+    {
+      "name": "#2 mates",
+      "param": "-2",
+      "description": "Comma-separated list of files containing the #2 mates (filename usually includes _2), or, if -c is specified, the mate sequences themselves. E.g., this might be flyA_2.fq,flyB_2.fq, or, if -c is specified, this might be GGTCATCCT,ACGGGTCGT. Sequences specified with this option must correspond file-for-file and read-for-read with those specified in <m1>. Reads may be a mix of different lengths. If - is specified, bowtie will read the #2 mates from the 'standard in' filehandle.",
+      "type": "file_upload"
+    },
+    {
+      "name": "Unpaired",
+      "description": "A comma-separated list of files containing unpaired reads to be aligned, or, if -c is specified, the unpaired read sequences themselves. E.g., this might be lane1.fq,lane2.fq,lane3.fq,lane4.fq, or, if -c is specified, this might be GGTCATCCT,ACGGGTCGT. Reads may be a mix of different lengths. If - is specified, Bowtie gets the reads from the 'standard in' filehandle.",
+      "type": "file_upload"
+    },
+    {
+      "name": "Unpaired/paired",
+      "param": "--12",
+      "description": "Comma-separated list of files containing a mix of unpaired and paired-end reads in Tab-delimited format. Tab-delimited format is a 1-read-per-line format where unpaired reads consist of a read name, sequence and quality string each separated by tabs. A paired-end read consists of a read name, sequnce of the #1 mate, quality values of the #1 mate, sequence of the #2 mate, and quality values of the #2 mate separated by tabs. Quality values can be expressed using any of the scales supported in FASTQ files. Reads may be a mix of different lengths and paired-end and unpaired reads may be intermingled in the same file. If - is specified, bowtie will read the Tab-delimited reads from the 'standard in' filehandle.",
+      "type": "text"
+    },
+    {
+      "name": "Hits output",
+      "required": true,
+      "description": "File to write alignments to. By default, alignments are written to the 'standard out' filehandle (i.e. the console)."
+    },
+    {
+      "name": "Unpaired CSFASTA",
+      "param": "--quals",
+      "description": "Comma-separated list of files containing quality values for corresponding unpaired CSFASTA reads.",
+      "type": "text"
+    },
+     {
+      "name": "CSFASTA #1 mates",
+      "param": "--Q1",
+      "description": "Comma-separated list of files containing quality values for corresponding CSFASTA #1 mates",
+      "type": "text"
+    },
+     {
+      "name": "CSFASTA #2 mates",
+      "param": "--Q2",
+      "description": "Comma-separated list of files containing quality values for corresponding CSFASTA #2 mates.",
+      "type": "text"
+    },
+    {
+      "name": "Skip",
+      "param": "-s",
+      "description": "Skip (i.e. do not align) the first <int> reads or pairs in the input.",
+      "type": "text"
+    },
+    {
+      "name": "Only first n",
+      "param": "-u",
+      "description": "Only align the first <int> reads or read pairs from the input (after the -s/--skip reads or pairs have been skipped).",
+      "type": "text"
+    },
+    {
+      "name": "Trim 5'",
+      "param": "-5",
+      "description": "Trim <int> bases from high-quality (left) end of each read before alignment (default: 0).",
+      "type": "text"
+    },
+    {
+      "name": "Trim 3'",
+      "param": "--3",
+      "description": "Trim <int> bases from low-quality (right) end of each read before alignment (default: 0).",
+      "type": "text"
+    },
+    {
+      "name": "Interleaved FASTQ",
+      "interlwaved": "--interleaved",
+      "description": "A comma-separated list of interleaved paired-end FASTQ files, where the records for the mate #1s are interleaved with the records for the mate #2s. Reads may be a mix of different lengths. If - is specified, Bowtie reads from the 'standard in' filehandle.",
+      "type": "text"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Input is FASTQ",
+      "param": "-q",
+      "description": "Query input files are FASTQ .fq/.fastq (default).",
+      "no_value": true,
+      "default": true
+    },
+    {
+      "name": "Input is FASTA",
+      "param": "-f",
+      "description": "Query input files are (multi-)FASTA .fa/.mfa",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Input is raw",
+      "param": "-r",
+      "description": "Query input files are raw one-sequence-per-line",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Phred 33",
+      "param": "--phred33-quals",
+      "description": "Input qualities are ASCII chars equal to the Phred quality plus 33. Default: on.",
+      "no_value": true,
+      "default": true
+    },
+    {
+      "name": "Phred 64",
+      "param": "--phred64-quals",
+      "description": "Input qualities are ASCII chars equal to the Phred quality plus 64. Default: on.",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "--help",
+      "description": "Help.",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

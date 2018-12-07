@@ -1,0 +1,47 @@
+{
+  "name": "04.11-BWAtools: bwa pemerge",
+  "script_path": "conf/scripts/bwa_pemerge.sh",
+  "description": "Merge overlapping paired ends (EXPERIMENTAL)",
+  "working_directory": "./",
+  "parameters": [
+    {
+      "name": "Input reads 1",
+      "type": "file_upload",
+      "description": "Input paired reads pair 1"
+    },
+    {
+      "name": "Input reads 2",
+      "type": "file_upload",
+      "description": "Input paired reads pair 2"
+    },
+    {
+      "name": "Threads",
+      "param": "-t",
+      "description": "Number of threads"
+    },
+    {
+      "name": "Min end",
+      "param": "-T",
+      "description": "Minimum end overlap"
+    },
+    {
+      "name": "Max errors",
+      "param": "-Q",
+      "description": "Max sum of errors"
+    },
+    {
+      "name": "Merged only",
+      "param": "-m",
+      "description": "Output merged reads only",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Unmerged only",
+      "param": "-u",
+      "description": "Output unmerged reads only",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

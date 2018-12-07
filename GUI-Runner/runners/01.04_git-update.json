@@ -1,0 +1,55 @@
+{
+  "name": "01.04-GIT Update Local Repository",
+  "script_path": "conf/scripts/git-update.sh",
+  "description": "Fetch from and integrate with another repository or a local branch",
+  "working_directory": "./",
+  "parameters": [
+    {
+      "name": "Choose your GIT Repository",
+      "description": "List Work Repositories",
+      "type": "list",
+      "values": {
+        "script": "ls conf/scripts"
+      },
+      "required": true
+    },
+    {                  
+      "name": "Origin",                                    
+      "description": "use <name> instead of 'origin' to track upstream",
+      "required": true,
+      "default": "origin"
+    },
+    {
+      "name": "Branch",
+      "description": "checkout <branch> instead of the remote's HEAD",  
+      "required": true,
+      "default": "master"
+    },
+    {                  
+      "name": "Others Parameters",
+      "description": "others parameters",
+      "required": false
+    },
+    {
+      "name": "Progress",
+      "param": "--progress",
+      "description": "Progress report.",
+      "no_value": true,
+      "default": true
+    },
+    {
+      "name": "Verbose",
+      "param": "--verbose",
+      "description": "Verbose.",
+      "no_value": true,
+      "default": true
+    },
+    {
+      "name": "Help",
+      "param": "--help",
+      "description": "Help.",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

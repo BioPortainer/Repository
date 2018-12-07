@@ -1,0 +1,138 @@
+{
+  "name": "04.02-BWAtools: bwa bwasw",
+  "script_path": "conf/scripts/bwa_bwasw.sh",
+  "description": "Align query sequences in the in.fq file. When mate.fq is present, perform paired-end alignment. The paired-end mode only works for reads Illumina short-insert libraries. In the paired-end mode, BWA-SW may still output split alignments but they are all marked as not properly paired; the mate positions will not be written if the mate has multiple local hit",
+  "working_directory": "./",
+  "parameters": [
+    {
+      "name": "Index prefix",
+      "required": true,
+      "description": "Index prefix"
+    },
+    {
+      "name": "Query fastq",
+      "required": true,
+      "description": "Query fastq file",
+      "type": "file_upload"
+    },
+    {
+      "name": "Mate fastq",
+      "description": "Mate fastq file",
+      "type": "file_upload"
+    },
+    {
+      "name": "Sam output",
+      "required": true,
+      "param": "-f",
+      "description": "File to write output to instead of stdout"
+    },
+    {
+      "name": "Match score",
+      "param": "-a",
+      "description": "score for a match [1]"
+    },
+    {
+      "name": "Mismatch penalty",
+      "param": "-b",
+      "description": "mismatch penalty [3]"
+    },
+    {
+      "name": "Gap open penalty",
+      "param": "-q",
+      "description": "gap open penalty [5]"
+    },
+    {
+      "name": "Gap extension penalty",
+      "param": "-r",
+      "description": "gap extension penalty [2]"
+    },
+    {
+      "name": "Band width",
+      "param": "-w",
+      "description": "band width [50]"
+    },
+    {
+      "name": "Mask level",
+      "param": "-m",
+      "description": "Mask level [0.50]"
+    },
+    {
+      "name": "Threads",
+      "param": "-t",
+      "description": "Number of threads [1]"
+    },
+    {
+      "name": "Output",
+      "param": "-f",
+      "description": "File to output results to instead of stdout"
+    },
+    
+    {
+      "name": "Ignore",
+      "param": "-I",
+      "description": "Ignore pairs with insert >=INT for inferring the size distr [20000]"
+    },
+    {
+      "name": "Score threshold",
+      "param": "-T",
+      "description": "Score threshold divided by a [30"
+    },
+    {
+      "name": "Threshold adjust",
+      "param": "-c",
+      "description": "Coefficient of length-threshold adjustment [5.5]"
+    },
+    {
+      "name": "Z-best",
+      "param": "-z",
+      "description": "Z-best heuristics. Higher -z increases accuracy at the cost of speed. [1]"
+    },
+    {
+      "name": "Seeding interval",
+      "param": "-s",
+      "description": "Maximum seeding interval size [3]"
+    },
+    {
+      "name": "Seeds to trigger",
+      "param": "-N",
+      "description": "# seeds to trigger rev aln; 2*INT is also the chaining threshold [5]"
+    },
+    {
+      "name": "Max gap chaining",
+      "param": "-G",
+      "description": "Maximum gap size during chaining [10000]"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Hard clipping",
+      "param": "-H",
+      "description": "In SAM output, use hard clipping instead of soft clipping",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Copy comment",
+      "param": "-C",
+      "description": "Copy FASTA/Q comment to SAM output",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Secondary",
+      "param": "-M",
+      "description": "Mark multi-part alignments as secondary",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Smith-Waterman",
+      "param": "-S",
+      "description": "Skip Smith-Waterman read pairing",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

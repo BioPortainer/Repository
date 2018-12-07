@@ -1,0 +1,99 @@
+{
+  "name": "04.08-BWAtools: bwa mem",
+  "script_path": "conf/scripts/bwa_mem.sh",
+  "description": "Align 70bp-1Mbp query sequences with the BWA-MEM algorithm. Briefly, the algorithm works by seeding alignments with maximal exact matches (MEMs) and then extending seeds with the affine-gap Smith-Waterman algorithm (SW)",
+  "working_directory": "./",
+  "parameters": [
+    {
+      "name": "Index prefix",
+      "required": true,
+      "description": "Index prefix"
+    },
+    {
+      "name": "Query fastq",
+      "required": true,
+      "description": "Query fastq file",
+      "type": "file_upload"
+    },
+    {
+      "name": "Mate fastq",
+      "description": "Mate query fastq file",
+      "type": "file_upload"
+    },
+    {
+      "name": "Sam output",
+      "required": true,
+      "param": "-o",
+      "default": "",
+      "description": "Sam file to output results to [stdout]"
+    },
+    {
+      "name": "Threads",
+      "param": "-t",
+      "description": "Number of threads"
+    },
+    {
+      "name": "Min seed",
+      "param": "-k",
+      "description": "Minimum seed length"
+    },
+    {
+      "name": "Band width",
+      "param": "-w",
+      "description": "Band width for banded alignment"
+    },
+    {
+      "name": "X-dropoff",
+      "param": "-d",
+      "description": "Off-diagonal X-dropoff"
+    },
+    {
+      "name": "Internal seeds",
+      "param": "-r",
+      "description": "Look for internal seeds inside a seed longer than {-k} * FLOAT"
+    },
+    {
+      "name": "3rd round",
+      "param": "-y",
+      "description": "Seed occurrence for the 3rd round seeding"
+    },
+    {
+      "name": "Skip",
+      "param": "-c",
+      "description": "Skip seeds with more than INT occurrences"
+    },
+    {
+      "name": "Drop short chain",
+      "param": "-D",
+      "description": "Drop chains shorter than FLOAT fraction of the longest overlapping chain [0.50]"
+    },
+    {
+      "name": "Discard short seed",
+      "param": "-W",
+      "description": "Discard a chain if seeded bases shorter than INT [0]"
+    },
+    {
+      "name": "Mate rescue",
+      "param": "-m",
+      "description": "Perform at most INT rounds of mate rescues for each read"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Skip mate rescue",
+      "param": "-S",
+      "description": "Skip mate rescue",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Skip pairing",
+      "param": "-P",
+      "description": "Skip pairing; mate rescue performed unless -S also in use",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

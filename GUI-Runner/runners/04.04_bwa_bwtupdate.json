@@ -1,0 +1,13 @@
+{
+  "name": "04.04-BWAtools: bwa bwtupdate",
+  "script_path": "conf/scripts/bwa_bwtupdate.sh",
+  "description": "Update .bwt to the new format",
+  "working_directory": "./",
+  "parameters": [
+    {
+      "name": "BWT input file",
+      "type": "file_upload",
+      "description": "bwt input file"
+    }
+  ]
+}

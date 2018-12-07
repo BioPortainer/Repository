@@ -1,0 +1,17 @@
+{
+  "name": "01.03-GIT Remove Local Repository",
+  "script_path": "conf/scripts/rm.sh",
+  "description": "Remove files from the working tree and from the index",
+  "working_directory": "/root/workdir/data/",
+  "parameters": [
+    {
+      "name": "Remove Repository",
+      "description": "List Repositories",
+      "type": "list",
+      "values": {
+        "script": "ls conf/scripts"
+      },
+      "required": true 
+    }
+  ]
+}

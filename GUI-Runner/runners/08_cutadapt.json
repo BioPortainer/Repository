@@ -1,0 +1,87 @@
+{
+  "name": "08-Cutadapt",
+  "script_path": "conf/scripts/cutadapt.sh",
+  "description": "Removes adapter sequences from high-throughput sequencing reads",
+  "working_directory": "./",
+  "requires_terminal": true,
+  "parameters": [
+    {
+      "name": "Fastq input",
+      "type": "file_upload",
+      "description": "input fastq"
+    },
+    {
+      "name": "Fastq mate",
+      "type": "file_upload",
+      "description": "input fastq of mate 2 paired read"
+    },
+    {
+      "name": "Fastq output",
+      "param": "-o",
+      "description": "Write trimmed reads to FILE. FASTQ or FASTA format is chosen depending on input. The summary report is sent to standard output. Use '{name}' in FILE to demultiplex reads into multiple files. Default: write to standard output"
+    },
+    {
+      "name": "Paired output",
+      "param": "-p",
+      "description": "Write second read in a pair to FILE"
+    },
+    {
+      "name": "Input format",
+      "param": "-f",
+      "description": "Input file format; can be either 'fasta', 'fastq' or 'sra-fastq'. Ignored when reading csfasta/qual files. Default: auto-detect from file name extension",
+      "type": "list",
+      "values": [
+        "fasta",
+        "fastq",
+        "sra-fastq"
+      ]
+    },
+    {
+      "name": "3' Adapter",
+      "param": "-a",
+      "description": "Sequence of an adapter ligated to the 3' end (paired data: of the first read). The adapter and subsequent  bases are trimmed. If a '$' character is appended ('anchoring'), the adapter is only found if it is a suffix of the read"
+    },
+    {
+      "name": "R2 3' Adapter",
+      "param": "-A",
+      "description": "3' adapter to be removed from second read in a pair"
+    },
+    {
+      "name": "5' Adapter",
+      "param": "-g",
+      "description": "Sequence of an adapter ligated to the 5' end (paired data: of the first read). The adapter and any preceding bases are trimmed. Partial matches at the 5' end are allowed. If a '^' character is prepended ('anchoring'), the adapter is only found if it is a prefix of the read"
+    },
+    {
+      "name": "R2 5' Adapter",
+      "param": "-G",
+      "description": "5' adapter to be removed from second read in a pair"
+    },
+    {
+      "name": "Any Adapter",
+      "param": "-b",
+      "description": "Sequence of an adapter that may be ligated to the 5' or 3' end (paired data: of the first read). Both types of matches as described under -a und -g are allowed. If the first base of the read is part of the match, the behavior is as with -g, otherwise as with -a. This option is mostly for rescuing failed library preparations - do not use if you know which end your adapter was ligated to!"
+    },
+    {
+      "name": "R2 any Adapter",
+      "param": "-B",
+      "description": "5'/3 adapter to be removed from second read in a pair"
+    },
+    {
+      "name": "Cores",
+      "param": "-j",
+      "description": "Number of CPU cores to use. Use 0 to auto-detect. Default: 1",
+      "default": "1"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Show the help message and exit",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}
