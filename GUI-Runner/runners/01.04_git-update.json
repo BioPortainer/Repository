@@ -1,5 +1,5 @@
 {
-  "name": "01.04-GIT Update Local Repository",
+  "name": "01.04 GIT Update Local Repository",
   "script_path": "conf/scripts/git-update.sh",
   "description": "Fetch from and integrate with another repository or a local branch",
   "working_directory": "./",
