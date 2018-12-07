@@ -1,0 +1,55 @@
+{
+  "name": "09.05-Deeptools: bigwigCompare",
+  "script_path": "/GUI/conf/scripts/bigwigCompare.sh",
+  "description": "Normalizes and compares two bigWig files to obtain the ratio, log2ratio or difference between them",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Bigwig file 1",
+      "param": "--bigwig1",
+      "description": "Bigwig file 1. Usually the file for the treatment. (default: None)",
+      "type": "text"
+    },
+    {
+      "name": "Bigwig file 2",
+      "param": "--bigwig2",
+      "description": "Bigwig file 2. Usually the file for the control. (default: None)",
+      "type": "text"
+    },
+    {
+      "name": "Scale Factors",
+      "param": "--scaleFactors",
+      "description": "Set this parameter to multipy the bigwig values by a constant. The format is scaleFactor1:scaleFactor2. For example 0.7:1 to scale the first bigwig file by 0.7 while not scaling the second bigwig file (default:None)",
+      "type": "text"
+    },
+    {
+      "name": "Pseudo count",
+      "param": "--pseudocount",
+      "description": "small number to avoid x/0. Only useful when ratio = log2 or ratio (default: 1)",
+      "type": "text"
+    },
+    {
+      "name": "Operation",
+      "param": "--operation",
+      "description": "The default is to output the log2ratio of the twosamples. The reciprocal ratio returns the the negativeof the inverse of the ratio if the ratio is less than0. The resulting values are interpreted as negative fold changes. *NOTE*: Only with --operation subtract can --normalizeUsing RPGC or --normalizeUsing RPKM be used. Instead of performing a computation using both files, the scaled signal can alternatively be output for the first or second file using the '--operation first' or '--operation second' (default: log2)",
+      "type": "text"
+    },
+    {
+      "name": "NonCovered Regions",
+      "param": "--skipNonCoveredRegions",
+      "description": "This parameter determines if non-covered regions(regions without a score) in the bigWig files shouldbe skipped. The default is to treat those regions ashaving a value of zero. The decision to skip non-covered regions depends on the interpretation of theworkdir/data. Non-covered regions in a bigWig file mayrepresent repetitive regions that should be skipped.Alternatively, the interpretation of non-coveredregions as zeros may be wrong and this option shouldbe used (default: False)",
+      "type": "text"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Help",
+      "param": "--help",
+      "description": "Help.",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

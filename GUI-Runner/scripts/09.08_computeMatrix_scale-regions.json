@@ -1,0 +1,31 @@
+{
+  "name": "09.08-Deeptools: computeMatrix scale-regions",
+  "script_path": "/GUI/conf/scripts/computeMatrix_scale-regions.sh",
+  "description": "For computing the signal over a set of regions (scale-regions) where all regions are scaled to the same size",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Regions FileName",
+      "param": "--regionsFileName",
+      "description": "File name or names, in BED or GTF format, containingthe regions to plot. If multiple bed files are given,each one is considered a group that can be plottedseparately. Also, adding a '# symbol in the bed filecauses all the regions until the previous '#' to beconsidered one group. (default: None)",
+      "type": "text"
+    },
+    {
+      "name": "Score FileName",
+      "param": "--scoreFileName",
+      "description": "bigWig file(s) containing the scores to be plotted.Multiple files should be separated by spaced. BigWigfiles can be obtained by using the bamCoverage orbamCompare tools. More information about the bigWigfile format can be found athttp://genome.ucsc.edu/goldenPath/help/bigWig.html(default: None)",
+      "type": "text"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Help",
+      "param": "--help",
+      "description": "Help.",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

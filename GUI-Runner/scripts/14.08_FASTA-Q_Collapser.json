@@ -1,0 +1,31 @@
+{
+  "name": "14.08-Fastx tool kit: FASTA-Q collapser",
+  "script_path": "/GUI/conf/scripts/D8_FASTA-Q_Collapser.sh",
+  "description": "Collapse identical sequences in a FASTQ/A file into a single sequence (while maintaining reads counts)",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Input",
+      "param": "-i",
+      "required": true,
+      "description": "FASTA/Q input file. default is STDIN"
+    },
+    {
+      "name": "Output",
+      "param": "-o",
+      "required": true,
+      "description": "FASTA/Q output file. default is STDOUT"
+    },
+    {
+      "name": "Other Parameters",
+      "description": "Other Parameters"
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "no_value": true,
+      "default": false,
+      "description": "Helpful help screen"
+    }
+  ]
+}

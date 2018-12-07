@@ -1,0 +1,37 @@
+{
+  "name": "21.01-Khmer: Abundance dist single",
+  "script_path": "/GUI/conf/scripts/abundance-dist-single.sh",
+  "description": "Calculate the abundance distribution of k-mers from a single sequence file",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "FAST[AQ] input",
+      "description": "The name of the input FAST[AQ] sequence file."
+    },
+    {
+      "name": "Output histogram",
+      "description": "The name of the output histogram file."
+    },
+    {
+      "name": "K-mer size",
+      "param": "-k",
+      "description": "k-mer size to use"
+    },
+    {
+      "name": "Threads",
+      "param": "-T",
+      "description": "k-mer size to use"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Show the help message and exit",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

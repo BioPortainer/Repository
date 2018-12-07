@@ -1,0 +1,47 @@
+{
+  "name": "21.09-Khmer: Extract-partitions",
+  "script_path": "/GUI/conf/scripts/extract-partitions.sh",
+  "description": "Separate sequences that are annotated with partitions into grouped files",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Output prefix",
+      "description": "Output filename prefix"
+    },
+    {
+      "name": "Input partition",
+      "description": "Input partition filename"
+    },
+    {
+      "name": "Max size",
+      "param": "-X",
+      "description": "Max group size (n sequences)"
+    },
+    {
+      "name": "Min size",
+      "param": "-m",
+      "description": "Minimum partition size worth keeping"
+    },
+    {
+      "name": "No output groups",
+      "param": "-n",
+      "description": "Do not actually output groups files"
+    },
+    {
+      "name": "Output unassigned",
+      "param": "-U",
+      "description": "Output unassigned sequences, too"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Helpful help screen",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

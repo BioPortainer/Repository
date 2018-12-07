@@ -1,0 +1,36 @@
+{
+  "name": "14.15-Fastx tool kit: FASTX barcode splitter",
+  "script_path": "/GUI/conf/scripts/D15_FASTX_Barcode_Splitter.sh",
+  "description": "This program reads FASTA/FASTQ file and splits it into several smaller file, based on barcode matching",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Barcodes file",
+      "param": "--bcfile",
+      "required": true,
+      "description": "Barcodes file name"
+    },
+    {
+      "name": "File prefix",
+      "param": "--prefix",
+      "description": "File prefix. will be added to the output files. Can be used to specify output directories."
+    },
+    {
+      "name": "Max mismatches",
+      "param": "--mismatches",
+      "description": "Max. number of mismatches allowed. default is 1",
+      "default": 1
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Help",
+      "param":"--help",
+      "description": "Help screen",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "14.14-Fastx tool kit: FASTQ to FASTA",
+  "script_path": "/GUI/conf/scripts/D1_FASTQ-to-FASTA.sh",
+  "description": "Convert FASTQ files to FASTA files",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Input",
+      "param": "-i",
+      "required": true,
+      "description": "FASTA/Q input file. default is STDIN"
+    },
+    {
+      "name": "Output",
+      "param": "-o",
+      "required": true,
+      "description": "FASTA output file. default is STDOUT"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Helpful help screen",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

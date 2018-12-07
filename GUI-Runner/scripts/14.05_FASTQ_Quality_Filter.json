@@ -1,0 +1,43 @@
+{
+  "name": "14.05-Fastx tool kit: FASTQ quality filter",
+  "script_path": "/GUI/conf/scripts/D10_FASTQ_Quality_Filter.sh",
+  "description": "Filters sequences based on quality",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Input",
+      "param": "-i",
+      "required": true,
+      "description": "FASTA/Q input file. default is STDIN"
+    },
+    {
+      "name": "Output",
+      "param": "-o",
+      "required": true,
+      "description": "FASTA/Q output file. default is STDOUT"
+    },
+    {
+      "name": "Min quality",
+      "param": "-q",
+      "description": "Minimum quality score to keep.",
+      "required": true
+    },
+    {
+      "name": "Minimum percent",
+      "param": "-p",
+      "description": "Minimum percent of bases that must have [-q] quality",
+      "required": true
+    },
+    {
+      "name": "Other Parameters",
+      "description": "Other Parameters"
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "no_value": true,
+      "default": false,
+      "description": "Helpful help screen"
+    }
+  ]
+}

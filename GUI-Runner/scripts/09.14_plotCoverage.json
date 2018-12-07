@@ -1,0 +1,54 @@
+{
+  "name": "09.14-Deeptools: plotCoverage",
+  "script_path": "/GUI/conf/scripts/plotCoverage.sh",
+  "description": "Generates a panel of two plots. The first one simply represents the frequencies of the found read coverages, which helps you judge how relevant the mean coverage value (printed next to the sample name) is. If the distribution of read coverages is more or less homoskedatic and, ideally, normally distributed (most likely it won’t be), then the mean is a very appropriate proxy for sequencing depth",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Bam inputs",
+      "param": "-b",
+      "description": "List of indexed BAM files separated by spaces.",
+      "required": true
+    },
+    {
+      "name": "Output",
+      "param": "-o",
+      "description": "File name to save the plot to"
+    },
+    {
+      "name": "Labels",
+      "param": "-l",
+      "description": "User defined labels instead of default labels from file names. Multiple labels have to be separated by spaces, e.g. –labels sample1 sample2 sample3"
+    },
+    {
+      "name": "Plot title",
+      "param": "-T",
+      "description": "Title of the plot, to be printed on top of the generated image. Leave blank for no title"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Smart labels",
+      "param": "--smartLabels",
+      "description": "Instead of manually specifying labels for the input BAM files, this causes deepTools to use the file name after removing the path and extension.",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Skip zeros",
+      "param": "-skipZeros",
+      "description": "y setting this option, genomic regions that have zero or nan values in _all_ samples are excluded",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "--help",
+      "description": "Instead of manually specifying labels for the input BAM files, this causes deepTools to use the file name after removing the path and extension.",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

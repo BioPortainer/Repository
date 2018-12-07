@@ -1,0 +1,53 @@
+{
+  "name": "21.15-Khmer: Interleave-reads",
+  "script_path": "/GUI/conf/scripts/interleave-reads.sh",
+  "description": "Produce interleaved files from R1/R2 paired files",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Left file",
+      "description": "Left file."
+    },
+    {
+      "name": "Right file",
+      "description": "Right file."
+    },
+    {
+      "name": "Output",
+      "param": "-o",
+      "description": "Output file"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Do not reformat",
+      "param": "--no-reformat",
+      "description": "Do not reformat read names or enforce consistency",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Gzip",
+      "param": "--gzip",
+      "description": "Compress output using gzip",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Bzip",
+      "param": "--bzip",
+      "description": "Compress output using bzip2",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Show the help message and exit",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

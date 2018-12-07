@@ -1,0 +1,24 @@
+{
+  "name": "20.03-Kallisto: Kallisto inspect",
+  "script_path": "/GUI/conf/scripts/kallisto_inspect.sh",
+  "description": "Inspects and gives information about an index",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Index file",
+      "description": "Index file"
+    },
+    {
+      "name": "GFA output",
+      "param": "--gfa",
+      "description": "Filename for GFA output of T-DBG"
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Helpful help screen",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "name": "09.03-Deeptools: bamCoverage",
+  "script_path": "/GUI/conf/scripts/bamCoverage.sh",
+  "description": "Takes an alignment of reads or fragments as input (BAM file) and generates a coverage track (bigWig or bedGraph) as output. The coverage is calculated as the number of reads per bin, where bins are short consecutive counting windows of a defined size. It is possible to extended the length of the reads to better reflect the actual fragment length. bamCoverage offers normalization by scaling factor, Reads Per Kilobase per Million mapped reads (RPKM), and 1x depth (reads per genome coverage, RPGCe",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "BAM input",
+      "param": "--bam",
+      "description": "BAM file to process (default: None)"
+    },
+    {
+      "name": "Output",
+      "param": "-o",
+      "description": "Output file name. (default: None)"
+    },
+    {
+      "name": "Output type",
+      "param": "-of",
+      "description": "Output file type. Either 'bigwig' or 'bedgraph. default: bigwig)",
+      "type": "list",
+      "values": [
+        "bigwig",
+        "bedgraph"
+      ]
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Help",
+      "param": "--help",
+      "description": "Help.",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

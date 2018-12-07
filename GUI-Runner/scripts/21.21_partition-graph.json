@@ -1,0 +1,40 @@
+{
+  "name": "21.21-Khmer: Partition-graph",
+  "script_path": "/GUI/conf/scripts/partition-graph.sh",
+  "description": "Partition a sequence graph based upon waypoint connectivity",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Basename input",
+      "description": "Basename of the input k-mer nodegraph + tagset files"
+    },
+    {
+      "name": "Stoptags",
+      "param": "-S", 
+      "description": "Use stoptags in this file during partitioning"
+    },
+    {
+      "name": "Threads",
+      "param": "-T",
+      "description": "Number of simultaneous threads to execute"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "No big traverse",
+      "param": "--no-big-traverse",
+      "description": "Truncate graph joins at big traversals",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Show the help message and exit",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

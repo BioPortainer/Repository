@@ -1,0 +1,51 @@
+{
+	"name": "16-GATK",
+	"script_path": "/GUI/conf/scripts/R4.GATK.sh",
+	"description": "Toolkit for variant discovery and genotyping",
+	"working_directory": "/root/workdir/data",
+	"parameters":[
+		{
+			"name": "Analysis type",
+			"param": "-T",
+			"description": "Name of the tool to run",
+			"required": true
+		},
+		{
+			"name": "Input file",
+			"param": "-I",
+			"description": "Input file containing sequence data (BAM or CRAM)"
+		},
+		{
+			"name": "Other parameters",
+			"description": "Other parameters"
+		},
+		{
+			"name": "Show full bam list",
+			"param": "--showFullBamList",
+			"description": "Emit list of input BAM/CRAM files to log",
+			"no_value": true,
+			"default": false
+		},
+		{
+			"name": "Jdk deflater",
+			"param": "-jdk_deflater",
+			"description": "Use the JDK Deflater instead of the IntelDeflater for writing BAMs",
+			"no_value": true,
+			"default": false
+		},
+		{
+			"name": "Jdk inflater",
+			"param": "-jdk_inflater",
+			"description": "Use the JDK Inflater instead of the IntelInflater for reading BAMs",
+			"no_value": true,
+			"default": false
+		},
+		{
+			"name": "Help",
+			"param": "-h",
+			"description": "Generate the help message",
+			"no_value": true,
+			"default": false
+		}
+	]
+}

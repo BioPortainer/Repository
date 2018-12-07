@@ -1,0 +1,71 @@
+{
+  "name": "09.15-Deeptools: plotEnrichment",
+  "script_path": "/GUI/conf/scripts/plotEnrichment.sh",
+  "description": "Tool for calculating and plotting the signal enrichment in either regions in BED format or feature types (column 3) in GTF format",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Bam inputs",
+      "param": "-b",
+      "description": "List of indexed bam files separated by spaces.",
+      "required": true
+    },
+    {
+      "name": "BED",
+      "param": "--BED",
+      "description": "Limits the enrichment analysis to the regions specified in these BED/GTF files. Enrichment iscalculated as the number of reads overlapping eachfeature type. The feature type is column 3 in a GTFfile and 'peak for BED files.",
+      "required": true
+    },
+    {
+      "name": "Output",
+      "param": "-o",
+      "description": "File name to save the plot to"
+    },
+    {
+      "name": "Labels",
+      "param": "-l",
+      "description": "User defined labels instead of default labels from file names. Multiple labels have to be separated by spaces, e.g. –labels sample1 sample2 sample3"
+    },
+    {
+      "name": "Region labels",
+      "param": "--regionLabels",
+      "description": "For BED files, the label given to its region is the file name, but this can be overridden by providing a custom label. For GTF files this is ignored. Note that if you provide labels, you MUST provide one for each BED/GTF file, even though it will be ignored for GTF files"
+    },
+    {
+      "name": "Plot title",
+      "param": "-T",
+      "description": "Title of the plot, to be printed on top of the generated image. Leave blank for no title"
+    },
+    {
+      "name": "Plot format",
+      "param": "--plotFileFormat",
+      "description": "Image format type. If given, this option overrides the image format based on the plotFile ending. The available options are: png, eps, pdf, plotly and svg.",
+      "type": "list",
+      "values": [
+        "png",
+        "pdf",
+        "svg",
+        "eps",
+        "plotly"
+      ]
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Smart labels",
+      "param": "--smartLabels",
+      "description": "Instead of manually specifying labels for the input BAM files, this causes deepTools to use the file name after removing the path and extension.",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "--help",
+      "description": "Instead of manually specifying labels for the input BAM files, this causes deepTools to use the file name after removing the path and extension.",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

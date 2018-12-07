@@ -1,0 +1,74 @@
+{
+  "name": "21.20-Khmer: Normalize-by-median",
+  "script_path": "/GUI/conf/scripts/normalize-by-median.sh",
+  "description": "Do digital normalization (remove mostly redundant sequences)",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "FAST[AQ] input",
+      "description": "Input FAST[AQ] sequence filename"
+    },
+    {
+      "name": "Output filename",
+      "param": "-o",
+      "description": "The name of the file to write the k-mer countgraph to."
+    },
+    {
+      "name": "Kmer size",
+      "param": "-k",
+      "description": "K-mer size"
+    },
+    {
+      "name": "Unique",
+      "param": "-U",
+      "description": "Approximate number of unique kmers in the input set"
+    },
+    {
+      "name": "Threads",
+      "param": "-T",
+      "description": "k-mer size to use"
+    },
+    {
+      "name": "Max memmory",
+      "param": "-M",
+      "description": "Maximum amount of memory to use for data structure"
+    },
+    {
+      "name": "Cutoff",
+      "param": "-C",
+      "description": "When the median k-mer coverage level is above this number the read is not kept"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Paired",
+      "param": "-p",
+      "description": "Require that all sequences be properly paired",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Force single",
+      "param": "--force-single",
+      "description": "Require that all sequences be properly paired",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Small count",
+      "param": "--small-count",
+      "description": "Reduce memory usage by using a smaller counter for individual kmers",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Show the help message and exit",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

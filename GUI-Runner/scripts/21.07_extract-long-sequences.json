@@ -1,0 +1,24 @@
+{
+  "name": "21.07-Khmer: Extract-long-sequences",
+  "script_path": "/GUI/conf/scripts/extract-long-sequences.sh",
+  "description": "Extract FASTQ or FASTA sequences longer than specified length (default: 200 bp)",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "FAST[AQ] sequence",
+      "description": "Input FAST[AQ] sequence filenames."
+    },
+    {
+      "name": "Lenght",
+      "param": "-l",
+      "description": "The minimum length of the sequence file."
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Show the help message and exit",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

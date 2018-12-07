@@ -1,0 +1,23 @@
+{
+  "name": "21.08-Khmer: Extract-paired-reads",
+  "script_path": "/GUI/conf/scripts/extract-paired-reads.sh",
+  "description": "Take a mixture of reads and split into pairs and orphans",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Infile",
+      "description": "Infile: The output is two files, <input file>.pe and <input file>.se, placed in the current directory. The .pe file contains interleaved and properly paired sequences, while the .se file contains orphan sequences"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Show the help message and exit",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

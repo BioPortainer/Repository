@@ -1,0 +1,69 @@
+{
+  "name": "21.11-Khmer: Filter-abund",
+  "script_path": "/GUI/conf/scripts/filter-abund.sh",
+  "description": "Trim sequences at a minimum k-mer abundance",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Presence table input",
+      "description": "The input k-mer presence table filename"
+    },
+    {
+      "name": "FAST[AQ] input",
+      "description": "Input FAST[AQ] sequence filename."
+    },
+    {
+      "name": "Output",
+      "param": "-o",
+      "description": "Output the trimmed sequences into a single file with the given filename instead of creating a new file for each input file"
+    },
+    {
+      "name": "K-mer size",
+      "param": "-k",
+      "description": "k-mer size to use"
+    },
+    {
+      "name": "Tables",
+      "param": "-N",
+      "description": "number of k-mer counting tables to use"
+    },
+    {
+      "name": "Threads",
+      "param": "-T",
+      "description": "k-mer size to use"
+    },
+    {
+      "name": "Min table size",
+      "param": "-x",
+      "description": "lower bound on tablesize to use"
+    },
+    {
+      "name": "Cutoff",
+      "param": "-C",
+      "description": "Trim at k-mers below this abundance"
+    },
+    {
+      "name": "Normalize",
+      "param": "-Z",
+      "description": "Base the variable-coverage cutoff on this median k-mer abundance"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Help",
+      "param": "-V",
+      "description": "Only trim low-abundance k-mers from sequences that have high coverage",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Show the help message and exit",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

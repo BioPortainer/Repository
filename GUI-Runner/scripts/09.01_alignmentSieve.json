@@ -1,0 +1,22 @@
+{
+  "name": "09.01-Deeptools: alignmentSieve",
+  "script_path": "/GUI/conf/scripts/alignmentSieve.sh",
+  "description": "Filters alignments in a BAM/CRAM file according the the specified parameters. It can optionally output to BEDPE format, possibly with the fragment ends shifted in a custom manner",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "BAM input",
+      "param": "--bam",
+      "description": "An indexed BAM file."
+    },
+    {
+      "name": "Output",
+      "param": "--outFile",
+      "description": "The file to write results to. These are the alignments or fragments that pass the filtering criteria."
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    }
+  ]
+}

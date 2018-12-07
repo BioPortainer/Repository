@@ -1,0 +1,60 @@
+{
+  "name": "17-GlimmerHMM",
+  "script_path": "/GUI/conf/scripts/D17_GlimmerHMM.sh",
+  "description": "Gene finder based on a Generalized Hidden Markov Model (GHMM)",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Protein domain searches",
+      "param": "-p",
+      "description": "If protein domain searches are available, read them from file file_name"
+    },
+    {
+      "name": "Training directory",
+      "param": "-d",
+      "description": "Training directory is specified by dir_name (introduced for compatibility with earlier versions)"
+    },
+    {
+      "name": "Best predictions",
+      "param": "-n",
+      "description": "Print top n best predictions."
+    },
+    {
+      "name": "Print output",
+      "param": "-o",
+      "description": "Print output in file_name; if n>1 for top best predictions, output is in file_name.1, file_name.2, ... , file_name.n"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Not partial",
+      "param": "-f",
+      "no_value": true,
+      "default": false,
+      "description": "Don't make partial gene predictions"
+    },
+    {
+      "name": "Not svm",
+      "param": "-v",
+      "no_value": true,
+      "default": false,
+      "description": "Don't use svm splice site predictions"
+    },
+    {
+      "name": "GFF output",
+      "param": "-g",
+      "no_value": true,
+      "default": false,
+      "description": " Print output in gff format"
+    },
+    {
+      "name": "Help",
+      "param":"-h",
+      "description": "Display the options of the program",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

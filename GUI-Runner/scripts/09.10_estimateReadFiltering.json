@@ -1,0 +1,47 @@
+{
+  "name": "09.10-Deeptools: estimateReadFiltering",
+  "script_path": "/GUI/conf/scripts/estimateReadFiltering.sh",
+  "description": "Estimates the number of reads that would be filtered given a set of settings and prints this to the terminal. Further, it tracks the number of singleton reads",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Input bam files",
+      "param": "-b",
+      "description": "List of indexed BAM files separated by spaces."
+    },
+    {
+      "name": "Output",
+      "param": "-o",
+      "description": "The file to write results to. By default, results are printed to the console"
+    },
+    {
+      "name": "Labels",
+      "param": "--sampleLabels",
+      "description": "Labels for the samples. The default is to use the file name of the sample. The sample labels should be separated by spaces and quoted if a label itselfcontains a space E.g. –sampleLabels label-1 “label 2”"
+    },
+    {
+      "name": "Smart Labels",
+      "param": "--smartLabels",
+      "description": "Instead of manually specifying labels for the input BAM files, this causes deepTools to use the file name after removing the path and extension"
+    },
+    {
+      "name": "Bin size",
+      "param": "-bs",
+      "description": "Length in bases of the window used to sample the genome"
+    },
+    {
+      "name": "Bins distance",
+      "param": "-n",
+      "description": "To reduce the computation time, not every possible genomic bin is sampled. This option allows you to set the distance between bins actually sampled from. Larger numbers are sufficient for high coverage samples, while smaller values are useful for lower coverage samples. Note that if you specify a value that results in too few (<1000) reads sampled, the value will be decreased. (default 10000)"
+    },
+    {
+      "name": "Processors",
+      "param": "-p",
+      "description": "Number of processors to use. Type “max/2” to use half the maximum number of processors or “max” to use all available processors"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    }
+  ]
+}

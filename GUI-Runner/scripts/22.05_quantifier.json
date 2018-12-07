@@ -1,0 +1,57 @@
+{
+	"name": "22.05-miRDeep2: Quantifier",
+	"script_path": "/GUI/conf/scripts/R7.quantifier.sh",
+	"description": "Maps deep sequencing reads to predefined miRNA precursors and determines by that the expression of the corresponding miRNAs. First, the predefined mature miRNA sequences are mapped to the predefined precursors. Optionally, predefined star sequences can be mapped to the precursors too. By that the mature and star sequence in the precursors are determined. Second, the deep sequencing reads are mapped to the precursors. The number of reads falling into an interval 2nt upstream and 5nt downstream of the mature/star sequence is determined",
+	"working_directory": "/root/workdir/data",
+	"parameters":[
+		{
+			"name": "UCSC species",
+			"param": "-u",
+			"description": "List all values allowed for the species parameter that have an entry at UCSC.",
+			"required": true
+		},
+		{
+			"name": "Precursors",
+			"type": "file_upload",
+			"param": "-p",
+			"description": "miRNA precursor sequences from miRBase.",
+			"required": true
+		},
+		{
+			"name" : "miRNA sequences",
+			"param": "-m",
+			"description": "miRNA sequences from miRBase.",
+			"required": true,
+			"type": "file_upload"
+		},
+		{
+			"name" : "Your read sequences",
+			"param": "-r",
+			"required": true,
+			"type": "file_upload"
+		},
+		{
+			"name" : "Star",
+			"param": "-s",
+			"description": "Optional star sequences from miRBase",
+			"required": true,
+			"type": "file_upload"
+		},
+		{
+			"name": "Species",
+			"param": "-t",
+			"description": "e.g. Mouse or mmu if not searching in a specific species all species in your files will be analyzed else only the species in your dataset is considered"
+		},
+		{
+			"name": "Mismatches",
+			"param": "-g",
+			"description": "Number of allowed mismatches when mapping reads to precursors, default 1.",
+			"type": "int",
+			"default": 1
+		},
+		{
+			"name": "Other parameters",
+			"description": "Other parameters"
+		}
+	]
+}

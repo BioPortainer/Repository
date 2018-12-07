@@ -1,0 +1,35 @@
+{
+  "name": "12-Fastq-join",
+  "script_path": "/GUI/conf/scripts/fastq-join.sh",
+  "description": "Joins two paired-end reads on the overlapping ends",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Read1.fq",
+      "description": "Read1.fq"
+    },
+    {
+      "name": "Read2.fq",
+      "description": "Read2.fq"
+    },
+    {
+      "name": "Output",
+      "param": "-o",
+      "description": "Output: You can supply 3 -o arguments, for un1, un2, join files, or one argument as a file name template.  The suffix 'un1, un2, or join' is appended to the file, or they replace a %-character if present. If a 'mate' input file is present (barcode read), then the files 'un3' and 'join2' are also created"
+    },
+    {
+      "name": "Max diff",
+      "param": "-p",
+      "description": "N-percent maximum difference"
+    },
+    {
+      "name": "Min overlap",
+      "param": "-m",
+      "description": "N-minimum overlap"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "19-GMAP fusion",
+  "script_path": "/GUI/conf/scripts/D19_gmap-fusion.sh",
+  "description": "Utility for identifying candidate fusion transcripts based on transcript sequences reconstructed via RNA-Seq de novo transcriptome assembly",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Transcripts",
+      "param": "--transcripts",
+      "description": "transcript fasta file",
+      "required": true
+    },
+    {
+      "name": "Genome Dir",
+      "param": "--genome_lib_dir",
+      "required": true,
+      "description": "directory containing genome lib (see http://FusionFilter.github.io for details)"
+    },
+    {
+      "name": "R1",
+      "param": "--left_fq",
+      "description": "Illumina paired-end reads /1"
+    },
+    {
+      "name": "R2",
+      "param": "--right_fq",
+      "description": "Illumina paired-end reads /2"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    }
+  ]
+}
+

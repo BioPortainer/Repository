@@ -1,0 +1,42 @@
+{
+  "name": "14.11-Fastx tool kit: FASTA-Q renamer",
+  "script_path": "/GUI/conf/scripts/D7_FASTA-Q_Renamer.sh",
+  "description": "Renames the sequence identifiers in FASTQ/A file",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Input",
+      "param": "-i",
+      "required": true,
+      "description": "FASTA/Q input file. default is STDIN"
+    },
+    {
+      "name": "Output",
+      "param": "-o",
+      "required": true,
+      "description": "FASTA/Q output file. default is STDOUT"
+    },
+    {
+      "name": "Type",
+      "param": "-n",
+      "required": true,
+      "description": "rename type: SEQ - use the nucleotides sequence as the name. COUNT - use simply counter as the name",
+      "type": "list",
+      "values":[
+     	"SEQ",
+      	"COUNT"
+      ]
+    },
+    {
+      "name": "Other Parameters",
+      "description": "Other Parameters"
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Helpful help screen",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "14.04-Fastx tool kit: FASTQ quality chart",
+  "script_path": "/GUI/conf/scripts/D3_FASTQ_Quality_Chart.sh",
+  "description": "Generates a solexa quality score box-plot graph",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Input",
+      "param": "-i",
+      "required": true,
+      "description": "Input file. Should be the output of 'solexa_quality_statistics' program"
+    },
+    {
+      "name": "Output",
+      "param": "-o",
+      "required": true,
+      "description": "Output file name. default is STDOUT"
+    },
+    
+    {
+      "name": "Title",
+      "param": "-t",
+      "required": true,
+      "description": "Title (usually the solexa file name) - will be plotted on the graph"
+    },
+    {
+      "name": "Output .PS",
+      "param": "-p",
+      "description": "Generate PostScript (.PS) file. Default is PNG image",
+      "no_value":true,
+      "default": false
+    },
+    {
+    "name": "Help",
+    "param":"",
+    "description":"See the usage of the tool",
+    "no_value": true,
+    "default": false
+    }
+  ]
+}
+

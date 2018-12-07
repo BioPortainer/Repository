@@ -1,0 +1,79 @@
+{
+	"name": "10-FASTA_Splitter",
+	"script_path": "/GUI/conf/scripts/R3.FASTA_Splitter.sh",
+	"description": "Divides a large FASTA file into a set of smaller, approximately equally sized files. It works with whole sequences, never dividing a sequence in the middle",
+	"working_directory": "/root/workdir/data",
+	"parameters": [
+		{
+			"name": "Input file",
+			"type": "file_upload",
+			"required": true
+		},
+		{
+			"name": "N Parts",
+			"param": "--n-parts",
+			"type": "int",
+			"required": true,
+			"description": "Divide into <N> parts"
+		},
+		{
+			"name": "Part size",
+			"param": "--part-size",
+			"type": "int",
+			"required": false,
+			"description": "Divide into parts of size <N>"
+		},
+		{
+			"name": "Measure",
+			"param": "--measure",
+			"description": "Specify whats is used for determining part sizes",
+			"type": "list",
+			"values": [
+				"all",
+				"seq",
+				"count"
+			]
+		},
+		{
+			"name": "Line length",
+			"param": "--line-length",
+			"default": "60",
+			"description": "Set output sequence line length"
+		},
+		{
+			"name": "EOL",
+			"param": "--eol",
+			"description": "Choose end-of-line character",
+			"type": "list",
+			"values": [
+				"unix",
+				"dos",
+				"mac"
+			]
+		},
+		{
+			"name": "Output dir",
+			"param": "--out-dir",
+			"description": "Specify output directory"
+		},
+		{
+			"name": "Other Parameters",
+			"description": "Other Parameters"
+		},
+		{
+			"name": "No pad",
+			"param": "--nopad",
+			"description": "Don't pad part numbers with 0",
+			"no_value": true,
+			"default": false
+		},
+		{
+			"name": "Help",
+			"param": "--help",
+			"description": "Show Help",
+			"no_value": true,
+			"default": false
+		}
+		
+	]
+}

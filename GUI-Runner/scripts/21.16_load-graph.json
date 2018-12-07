@@ -1,0 +1,54 @@
+{
+  "name": "21.16-Khmer: Load-graph",
+  "script_path": "/GUI/conf/scripts/load-graph.sh",
+  "description": "Load sequences into the compressible graph format plus optional tagset",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Output filename",
+      "description": "Output k-mer nodegraph filename."
+    },
+    {
+      "name": "FAST[AQ] input",
+      "description": "Input FAST[AQ] sequence filename."
+    },
+    {
+      "name": "Kmer size",
+      "param": "-k",
+      "description": "K-mer size"
+    },
+    {
+      "name": "Unique",
+      "param": "-U",
+      "description": "Approximate number of unique kmers in the input set"
+    },
+    {
+      "name": "Threads",
+      "param": "-T",
+      "description": "k-mer size to use"
+    },
+    {
+      "name": "Max memmory",
+      "param": "-M",
+      "description": "Maximum amount of memory to use for data structure"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "No tagset",
+      "param": "-n",
+      "description": "Do NOT construct tagset while loading sequences",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Show the help message and exit",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

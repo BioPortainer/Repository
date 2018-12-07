@@ -1,0 +1,69 @@
+{
+  "name": "21.25-Khmer: Trim-low-abund",
+  "script_path": "/GUI/conf/scripts/trim-low-abund.sh",
+  "description": "Trim low-abundance k-mers using a streaming algorithm",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Input filenames",
+      "description": "Input filenames"
+    },
+    {
+      "name": "Output filename",
+      "description": "Output k-mer nodegraph filename."
+    },
+    {
+      "name": "Kmer size",
+      "param": "-k",
+      "description": "K-mer size"
+    },
+    {
+      "name": "Unique",
+      "param": "-U",
+      "description": "Approximate number of unique kmers in the input set"
+    },
+    {
+      "name": "Threads",
+      "param": "-T",
+      "description": "k-mer size to use"
+    },
+    {
+      "name": "Max memmory",
+      "param": "-M",
+      "description": "Maximum amount of memory to use for data structure"
+    },
+    {
+      "name": "Cutoff",
+      "param": "-C",
+      "description": "Remove k-mers below this abundance"
+    },
+    {
+      "name": "Trim at coverage",
+      "param": "-Z",
+      "description": "Trim reads when entire read above this coverage"
+    },    
+    {
+      "name": "Variable coverage",
+      "param": "-V",
+      "description": "Only trim low-abundance k-mers from sequences that have high coverage"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Ignore pairs",
+      "param": "--ignore-pairs",
+      "description": "Treat all reads as if they were singletons",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Show the help message and exit",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}
