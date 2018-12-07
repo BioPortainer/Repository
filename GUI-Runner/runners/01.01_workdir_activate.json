@@ -1,5 +1,5 @@
 {
-  "name": "01.01-GIT Activate Local Repository",
+  "name": "01.01 GIT Activate Local Repository",
   "script_path": "conf/scripts/workdir_activate.sh",
   "description": "Choose your working repository",
   "working_directory": "./",
