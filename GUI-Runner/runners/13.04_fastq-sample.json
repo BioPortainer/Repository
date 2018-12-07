@@ -1,0 +1,44 @@
+{
+  "name": "13.04-Fastq-tools: Fastq-sample",
+  "script_path": "/GUI/conf/scripts/fastq-sample.sh",
+  "description": "Sample random reads from a FASTQ file",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Input files",
+      "description": "Input files"
+    },
+    {
+      "name": "Output prefix",
+      "param": "-o",
+      "description": "Output file prefix"
+    },
+    {
+      "name": "Sample",
+      "param": "-n",
+      "description": "The number of reads to sample",
+      "default": "10000"
+    },
+    {
+      "name": "Proportion",
+      "param": "-p",
+      "description": "The proportion of the total reads to sample"
+    },
+    {
+      "name": "Seed",
+      "param": "-s",
+      "description": "A manual seed to the random number generator"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Print the help",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "name": "09.02-Deeptools: bamCompare",
+  "script_path": "/GUI/conf/scripts/bamCompare.sh",
+  "description": "Can be used to generate a bigWig or bedGraph file based on two BAM files that are compared to each other while being simultaneously normalized for sequencing depth",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "BAM file 1",
+      "param": "--bamfile1",
+      "description": "Sorted BAM file 1. Usually the BAM file for the treatment. (default: None)",
+      "type": "text"
+    },
+    {
+      "name": "BAM file 2",
+      "param": "--bamfile2",
+      "description": "Sorted BAM file 2. Usually the BAM file for the treatment. (default: None)",
+      "type": "text"
+    },
+    {
+      "name": "Output file name",
+      "param": "--outFileName",
+      "description": "Output file name. (default: None)",
+      "type": "text"
+    },
+    {
+      "name": "Output type",
+      "param": "--outFileFormat=",
+      "description": "Output file type. Either 'bigwig' or 'bedgraph. default: bigwig)",
+      "type": "list",
+      "values": [
+        "bigwig",
+        "bedgraph"
+      ]
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Help",
+      "param": "--help",
+      "description": "Help.",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

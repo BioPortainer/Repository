@@ -1,0 +1,45 @@
+{
+  "name": "21.14-Khmer: Find-knots",
+  "script_path": "/GUI/conf/scripts/find-knots.sh",
+  "description": "Find all highly connected k-mers",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Graphbase",
+      "description": "Basename for the input and output files."
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Kmer size",
+      "param": "-k",
+      "description": "K-mer size to use"
+    },
+    {
+      "name": "Unique",
+      "param": "-U",
+      "description": "Approximate number of unique kmers in the input set"
+    },
+    {
+      "name": "Max memory",
+      "param": "-M",
+      "description": "Maximum amount of memory to use for data structure"
+    },
+    {
+      "name": "Small-count",
+      "param": "--small-count",
+      "description": "Reduce memory usage by using a smaller counter for individual kmers",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Show the help message and exit",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

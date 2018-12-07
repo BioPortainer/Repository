@@ -1,0 +1,43 @@
+{
+  "name": "21.12-Khmer: Filter-abund-single",
+  "script_path": "/GUI/conf/scripts/filter-abund-single.sh",
+  "description": "Trims sequences at a minimum k-mer abundance (in memory version)",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "FAST[AQ] input",
+      "description": " FAST[AQ] sequence file to trim"
+    },
+    {
+      "name": "K-mer size",
+      "param": "-k",
+      "description": "k-mer size to use"
+    },
+    {
+      "name": "Threads",
+      "param": "-T",
+      "description": "k-mer size to use"
+    },
+    {
+      "name": "Min table size",
+      "param": "-x",
+      "description": "lower bound on tablesize to use"
+    },
+    {
+      "name": "Cutoff",
+      "param": "-C",
+      "description": "Trim at k-mers below this abundance"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Helpful help screen",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

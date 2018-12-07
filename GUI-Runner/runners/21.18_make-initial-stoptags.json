@@ -1,0 +1,50 @@
+{
+  "name": "21.18-Khmer: Make-initial-stoptags",
+  "script_path": "/GUI/conf/scripts/make-initial-stoptags.sh",
+  "description": "Find an initial set of highly connected k-mers",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Graphbase input",
+      "description": "Basename for input and output filenames."
+    },
+    {
+      "name": "Kmer size",
+      "param": "-k",
+      "description": "K-mer size"
+    },
+    {
+      "name": "Unique",
+      "param": "-U",
+      "description": "Approximate number of unique kmers in the input set"
+    },
+    {
+      "name": "Max memmory",
+      "param": "-M",
+      "description": "Maximum amount of memory to use for data structure"
+    },
+    {
+      "name": "Stoptags",
+      "param": "-S",
+      "description": "Use stoptags in this file during partitioning"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Small count",
+      "param": "--small-count",
+      "description": "Reduce memory usage by using a smaller counter for individual kmers",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Show the help message and exit",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

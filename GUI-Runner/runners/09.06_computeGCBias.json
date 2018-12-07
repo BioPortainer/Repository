@@ -1,0 +1,39 @@
+{
+  "name": "09.06-Deeptools: computeGCBias",
+  "script_path": "/GUI/conf/scripts/computeGCBias.sh",
+  "description": "Computes the GC-bias using Benjamini’s method",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "BAM file",
+      "param": "--bamfile",
+      "description": "Sorted BAM file. (default: None)"
+    },
+    {
+      "name": "Effective size",
+      "param": "--effectiveGenomeSize",
+      "description": "The effective genome size is the portion of the genomethat is mappable. Large fractions of the genome arestretches of NNNN that should be discarded. Also, ifrepetitive regions were not included in the mapping ofreads, the effective genome size needs to be adjustedaccordingly. A table of values is available here: http://deeptools.readthedocs.io/en/latest/content/feature/effectiveGenomeSize.html . (default: None)"
+    },
+    {
+      "name": "Genome",
+      "param": "--genome",
+      "description": "Genome in two bit format. Most genomes can be foundhere: http://hgdownload.cse.ucsc.edu/gbdb/ Search forthe .2bit ending. Otherwise, fasta files can beconverted to 2bit using the UCSC programm calledfaToTwoBit available for different plattforms athttp://hgdownload.cse.ucsc.edu/admin/exe/ (default:None)"
+    },
+    {
+      "name": "GCbias",
+      "param": "--GCbiasFrequenciesFile",
+      "description": "Path to save the file containing the observed andexpected read frequencies per %GC-content. This fileis needed to run the correctGCBias tool. This is atext file. (default: None)"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Help",
+      "param": "-h", 
+      "description": "show the help message and exit",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

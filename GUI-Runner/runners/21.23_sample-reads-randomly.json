@@ -1,0 +1,27 @@
+{
+  "name": "21.23-Khmer: Sample-reads-randomly",
+  "script_path": "/GUI/conf/scripts/sample-reads-randomly.sh",
+  "description": "Uniformly subsample sequences from a collection of files",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Input filenames",
+      "description": "Filenames"
+    },
+    {
+      "name": "Output",
+      "description": "Output"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Helpful help screen",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

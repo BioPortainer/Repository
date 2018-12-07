@@ -1,0 +1,53 @@
+{
+  "name": "15-Flux simulator",
+  "script_path": "/GUI/conf/scripts/D16_Flux_Simulator.sh",
+  "description": "Modeling RNA-Seq experiments in silico: sequencing reads are produced from a reference genome according annotated transcripts",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Parameter file",
+      "param": "-p",
+      "required": true,
+      "description": "Specify parameter file (PAR file)"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Simulate Expression",
+      "param": "-x",
+      "no_value": true,
+      "description": "Simulate Expression.",
+      "default": false
+    },
+    {
+      "name": "Simulate Library",
+      "param": "-l",
+      "no_value": true,
+      "description": "Simulate Library Construction.",
+      "default": false
+    },
+    {
+      "name": "Simulate Sequencing",
+      "param": "-s",
+      "no_value": true,
+      "description": "Simulate Sequencing.",
+      "default": false
+    },
+    {
+      "name": "Print parameters",
+      "param": "-o",
+      "no_value": true,
+      "description": "Print default parameters.",
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "--help",
+      "description": "Show help",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

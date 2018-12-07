@@ -1,0 +1,31 @@
+{
+  "name": "14.06-Fastx tool kit: FASTQ-A artifacts filter",
+  "script_path": "/GUI/conf/scripts/D9_FASTQ-A_Artifacts_Filter.sh",
+  "description": "Remove artifacts in FAST Q/A",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Input",
+      "param": "-i",
+      "required": true,
+      "description": "FASTA/Q input file. default is STDIN"
+    },
+    {
+      "name": "Output",
+      "param": "-o",
+      "required": true,
+      "description": "FASTA/Q output file. default is STDOUT"
+    },
+    {
+      "name": "Other Parameters",
+      "description": "Other Parameters"
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Helpful help screen",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

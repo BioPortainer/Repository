@@ -1,0 +1,47 @@
+{
+  "name": "14.07-Fastx tool kit: FASTA-Q clipper",
+  "script_path": "/GUI/conf/scripts/D5_FASTA-Q_Clipper.sh",
+  "description": "Remove sequencing adapters/linkers",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Input",
+      "param": "-i",
+      "required": true,
+      "description": "FASTA/Q input file. default is STDIN"
+    },
+    {
+      "name": "Output",
+      "param": "-o",
+      "required": true,
+      "description": "FASTA/Q output file. default is STDOUT"
+    },
+    {
+      "name": "Adapter",
+      "param": "-a",
+      "description": "ADAPTER string. default is CCTTAAGG (dummy adapter)"
+    },
+    {
+      "name": "Bases keep",
+      "param": "-d",
+      "description": "Keep the adapter and N bases after it. (using '-d 0' is the same as not using '-d' at all. which is the default)."
+    },
+    {
+      "name": "Min lenght",
+      "param": "-l",
+      "required": true,
+      "description": "Discard sequences shorter than N nucleotides. default is 5)"
+    },
+    {
+      "name": "Other Parameters",
+      "description": "Other Parameters"
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "no_value": true,
+      "default": false,
+      "description": "Helpful help screen"
+    }
+  ]
+}

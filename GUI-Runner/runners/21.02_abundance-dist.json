@@ -1,0 +1,45 @@
+{
+  "name": "21.02-Khmer: Abundance-dist",
+  "script_path": "/GUI/conf/scripts/abundance-dist.sh",
+  "description": "Calculate abundance distribution of the k-mers in the sequence file using a pre-made k-mer countgraph",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "k-mer countgraph",
+      "description": "The name of the input k-mer countgraph file."
+    },
+    {
+      "name": "FAST[AQ] sequence",
+      "description": "The name of the input FAST[AQ] sequence file."
+    },
+    {
+      "name": "Output Histogram",
+      "description": "The columns are: (1) k-mer abundance, (2) k-mer count, (3) cumulative count, (4) fraction of total distinct k-mers."
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "No zero",
+      "param": "-z",
+      "description": "Do not output zero-count bins",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Squash",
+      "param": "-s",
+      "description": "Overwrite existing output_histogram_filename",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Show the help message and exit",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+	"name": "22.04-miRDeep2: Mirdeep2",
+	"script_path": "/GUI/conf/scripts/R6.mirdeep2.sh",
+	"description": "Wrapper function for the miRDeep2.pl program package. The script runs all necessary scripts of the miRDeep2 package to perform a microRNA detection deep sequencing data anlysis",
+	"working_directory": "/root/workdir/data",
+	"parameters":[
+		{
+			"name": "Input reads",
+			"type": "file_upload",
+			"param": "--file_upload",
+			"required": true,
+			"description": "A fasta file with deep sequencing reads"
+		},
+		{
+			"name": "Input genome",
+			"type": "file_upload",
+			"param": "--file_upload",
+			"required": true,
+			"description": "A fasta file of the corresponding genome"
+		},
+		{
+			"name": "Input mapped",
+			"type": "file_upload",
+			"param": "--file_upload",
+			"required": true,
+			"description": "A file of mapped reads to the genome in miRDeep2 arf format"
+		},
+		{
+			"name": "Known miRNAs",
+			"type": "file_upload",
+			"param": "--file_upload",
+			"description": "An optional fasta file with known miRNAs of the analysing species"
+		},
+		{
+			"name": "Rel. sp. miRNAs",
+			"type": "file_upload",
+			"param": "--file_upload",
+			"description": "An optional fasta file of known miRNAs of related species"
+		},
+		{
+			"name": "Min stack",
+			"param": "-a",
+			"description": "Minimum read stack height that triggers analysis. Using this option disables automatic estimation of the optimal value",
+			"type": "int"
+		},
+		{
+			"name": "Min cut-off",
+			"param": "-b",
+			"description": "Minimum score cut-off for predicted novel miRNAs to be displayed in the overview table. This score cut-off is by default 0.",
+			"type": "int",
+			"default": 0
+		},
+		{
+			"name": "Max precursors",
+			"param": "-g",
+			"description": " maximum number of precursors to analyze when automatic excision gearing is used. Default=50000, if set to -1 all precursors will be analyzed.",
+			"type": "int",
+			"default": 50000
+		},
+		{
+			"name": "Species",
+			"param": "-t",
+			"description": "Species being analyzed - this is used to link to the appropriate UCSC browser."
+		},
+		{
+			"name": "UCSC supported",
+			"param": "-u",
+			"description": "Output list of UCSC browser species that are supported and exit"
+		},	
+		{
+			"name": "Known miRBase star",
+			"param": "-s",
+			"description": "File with known miRBase star sequences."
+		},
+		{
+			"name": "Other parameters",
+			"description": "Other parameters"
+		},
+		{
+			"name": "Remove temp",
+			"param": "-v",
+			"description": "Remove directory with temporary files.",
+			"no_value": true,
+			"default": false
+		},
+		{
+			"name": "No randfold",
+			"param": "-c",
+			"description": "Disable randfold analysis.",
+			"no_value": true,
+			"default": false
+		}
+	]
+}

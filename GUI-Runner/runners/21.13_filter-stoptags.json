@@ -1,0 +1,32 @@
+{
+  "name": "21.13-Khmer: Filter-stoptags",
+  "script_path": "/GUI/conf/scripts/filter-stoptags.sh",
+  "description": "Trim sequences at stoptags",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Input stoptags",
+      "description": "Input stoptags filename."
+    },
+    {
+      "name": "Input sequence",
+      "description": "Input sequence filename."
+    },
+    {
+      "name": "Kmer size",
+      "param": "-k",
+      "description": "K-mer size"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "show this help message and exit",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

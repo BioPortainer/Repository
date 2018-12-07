@@ -1,0 +1,31 @@
+{
+  "name": "21.04-Khmer: Count-median",
+  "script_path": "/GUI/conf/scripts/count-median.sh",
+  "description": "Count k-mers summary stats for sequences",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Countgraph filename",
+      "description": "input k-mer countgraph filename"
+    },
+    {
+      "name": "FAST[AQ] sequence",
+      "description": "Input FAST[AQ] sequences to annotate."
+    },
+    {
+      "name": "Summary filename",
+      "description": "Output summary filename"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Show the help message and exit",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

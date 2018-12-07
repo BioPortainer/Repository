@@ -1,0 +1,32 @@
+{
+  "name": "14.02-Fastx tool kit: FASTA formatter",
+  "script_path": "/GUI/conf/scripts/D12_FASTA_Formatter.sh",
+  "description": "Changes the width of sequences line in a FASTA file",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Input",
+      "param": "-i",
+      "required": true,
+      "description": "FASTA/Q input file. default is STDIN"
+    },
+    {
+      "name": "Output",
+      "param": "-o",
+      "required": true,
+      "description": "FASTA/Q output file. default is STDOUT"
+    },
+    
+    {
+      "name": "Other Parameters",
+      "description": "Other Parameters"
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "no_value": true,
+      "default": false,
+      "description": "Helpful help screen"
+    }
+  ]
+}

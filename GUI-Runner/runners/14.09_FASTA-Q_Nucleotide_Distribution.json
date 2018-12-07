@@ -1,0 +1,40 @@
+{
+  "name": "14.09-Fastx tool kit: FASTA-Q nucleotide distribution",
+  "script_path": "/GUI/conf/scripts/D4_FASTA-Q_Nucleotide_Distribution.sh",
+  "description": "FASTA-Q Nucleotide Distribution Plotter",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Input",
+      "param": "-i",
+      "required": true,
+      "description": "Input file. Should be the output of 'fastx_quality_statistics' program"
+    },
+    {
+      "name": "Output",
+      "param": "-o",
+      "required": true,
+      "description": "Output file name. default is STDOUT"
+    },
+    {
+      "name": "Title",
+      "param": "-t",
+      "required": true,
+      "description": "Title - will be plotted on the graph"
+    },
+    {
+      "name": "Output .PS",
+      "param": "-p",
+      "description": "Generate PostScript (.PS) file. Default is PNG image",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "",
+      "description": "See the usage of the tool",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

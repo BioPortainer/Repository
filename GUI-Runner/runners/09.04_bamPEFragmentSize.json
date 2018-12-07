@@ -1,0 +1,87 @@
+{
+  "name": "09.04-Deeptools: bamPEFragmentSize",
+  "script_path": "/GUI/conf/scripts/bamPEFragmentSize.sh",
+  "description": "This tool calculates the fragment sizes for read pairs given a BAM file from paired-end sequencing",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "List of BAM files",
+      "param": "--bamfiles",
+      "description": "List of BAM files to process."
+    },
+    {
+      "name": "Histogram .png file",
+      "param": "--histogram",
+      "description": "  Save a .png file with a histogram of the fragment length distribution."
+    },
+    {
+      "name": "Image type",
+      "param": "--plotFileFormat",
+      "description": "Image format type. Possible choices: png, pdf, svg, eps, plotly",
+      "type": "list",
+      "values": [
+        "png",
+        "pdf",
+        "svg",
+        "eps",
+        "plotly"
+      ]
+    },
+    {
+      "name": "Labels for the samples",
+      "param": "--samplesLabel",
+      "description": "Labels for the samples plotted. The default is to use the file name of the sample."
+    },
+    {
+      "name": "Labels for the samples",
+      "param": "--samplesLabel",
+      "description": "Labels for the samples plotted. The default is to use the file name of the sample."
+    },
+    {
+      "name": "Plot title",
+      "param": "--plotTitle",
+      "description": "Title of the plot, to be printed on top of the generated image."
+    },
+    {
+      "name": "Maximum fragment",
+      "param": "--maxFragmentLength",
+      "description": "The maximum fragment length in the histogram."
+    },
+    {
+      "name": "Length in bases",
+      "param": "--binSize",
+      "description": "Length in bases of the window used to sample the genome. (default 1000)"
+    },
+    {
+      "name": "Distance between bins",
+      "param": "--distanceBetweenBins",
+      "description": "This option allows you to set the distance between bins actually sampled from."
+    },
+    {
+      "name": "Regions to be excluded",
+      "param": "--blackListFileName",
+      "description": "TA BED file containing regions that should be excluded from all analyses."
+    },
+    {
+      "name": "Additional table",
+      "param": "--table",
+      "description": "In addition to printing read and fragment length metrics to the screen, write them to the given file in tabular format."
+    },
+    {
+      "name": "Fragment lenghts",
+      "param": "--outRawFragmentLengths",
+      "description": "Save the fragment (or read if the input is single-end) length and their associated number of occurrences to a tab-separated file."
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Show the help message and exit",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

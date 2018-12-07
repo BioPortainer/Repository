@@ -1,0 +1,54 @@
+{
+  "name": "21.06-Khmer: Do-partition",
+  "script_path": "/GUI/conf/scripts/do-partition.sh",
+  "description": "Load, partition, and annotate FAST[AQ] sequences",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Graphbase",
+      "description": "Base name for output files."
+    },
+    {
+      "name": "FAST[AQ] sequence",
+      "description": "Input FAST[AQ] sequence filenames."
+    },
+    {
+      "name": "Kmer size",
+      "param": "-k",
+      "description": "k-mer size to use"
+    },
+    {
+      "name": "Tables",
+      "param": "-N",
+      "description": "Number of k-mer counting tables to use"
+    },
+    {
+      "name": "Min table size",
+      "param": "-x",
+      "description": "lower bound on tablesize to use"
+    },
+    {
+      "name": "Threads",
+      "param": "-T",
+      "description": "Number of simultaneous threads to execute"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "No big traverse",
+      "param": "--no-big-traverse",
+      "description": "Truncate graph joins at big traversals",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Show this help message and exit",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

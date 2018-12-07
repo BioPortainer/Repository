@@ -1,0 +1,33 @@
+{
+  "name": "21.10-Khmer: Fastq-to-fasta",
+  "script_path": "/GUI/conf/scripts/fastq-to-fasta.sh",
+  "description": "Converts FASTQ format (.fq) files to FASTA format (.fa)",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "FASTQ input",
+      "description": "The name of the input FASTQ sequence file."
+    },
+    {
+      "name": "FASTQ input",
+      "param": "-o",
+      "description": "The name of the output FASTA sequence file"
+    },
+    {
+      "name": "Keep",
+      "param": "-n",
+      "description": "Option to drop reads containing ‘N’s in input_sequence file"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Helpful help screen",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

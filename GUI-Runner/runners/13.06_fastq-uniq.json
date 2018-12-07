@@ -1,0 +1,33 @@
+{
+  "name": "13.06-Fastq-tools: Fastq-uniq",
+  "script_path": "/GUI/conf/scripts/fastq-uniq.sh",
+  "description": "Output a non-redundant FASTQ file, in which there are no duplicate reads. (Warning: this program can be somewhat memory intensive)",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Output fastq",
+      "description": "Input fastq"
+    },
+    {
+      "name": "Verbose",
+      "param": "-v",
+      "description": "Print status along the way",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Version",
+      "param": "-V",
+      "description": "Output version information and exit",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Print the help",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

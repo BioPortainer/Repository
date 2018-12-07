@@ -1,0 +1,26 @@
+{
+	"name": "22.01-miRDeep2: Collapse reads",
+	"script_path": "/GUI/conf/scripts/siga-o-mestre.sh",
+	"description": "Collapses reads in the fasta file to ensure that each sequence only occurs once. To indicate how many times reads the sequence represents, a suffix is added to each fasta identifier. E.g. a sequence that represents ten reads in the data will have the '_x10' suffix added to the identifier.",
+	"working_directory": "/root/workdir/data",
+	"parameters":[
+		{
+			"name": "Input file",
+			"type": "file_upload",
+			"param": "--file_upload",
+			"description": "A fasta file, either in standard format or in the collapsed suffix format",
+			"required": true
+		},
+		{
+			"name": "Output",
+			"description": "A fasta file in the collapsed suffix format"
+		},
+		{
+			"name": "Outputs progress",
+			"param": "-a",
+			"description": "Outputs progress",
+			"no_value": true,
+			"default": false
+		}
+	]
+}

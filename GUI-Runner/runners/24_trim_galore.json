@@ -1,0 +1,76 @@
+{
+	"name": "24-Trim galore",
+	"script_path": "/GUI/conf/scripts/R9.trim_galore.sh",
+	"description": "Trim Galore! is a wrapper script to automate quality and adapter trimming as well as quality control, with some added functionality to remove biased methylation positions for RRBS sequence files (for directional, non-directional (or paired-end) sequencing)",
+	"working_directory": "/root/workdir/data",
+	"parameters":[
+		{
+			"name": "Adapter Sequence",
+			"param": "-a",
+			"description": "Adapter sequence to be trimmed"
+		},
+		{
+			"name": "Optional Adapter",
+			"param": "-a2",
+			"description": "Optional adapter sequence to be trimmed off read 2 of paired-end files."
+		},
+		{
+			"name": "Output Directory",
+			"param": "-o",
+			"description": "Specify output directory"
+		},
+		{
+			"name": "Erro Rate",
+			"param": "-e",
+			"description": "Maximum allowed error rate",
+			"default": "0.1"
+		},
+		{
+			"name": "Stringency",
+			"param": "-s",
+			"type": "int",
+			"description": "Overlap with adapter sequence required to trim a sequence.",
+			"default": "1"
+		},
+		{
+			"name": "Trim N",
+			"param": "--trim-n",
+			"description": "Removes Ns from either side of the read.",
+			"type": "int"
+		},
+		{
+			"name": "Other Parameters",
+			"description": "Other Parameters"
+		},
+		{
+			"name": "FASTQC",
+			"param": "--fastqc",
+			"no_value": true,
+			"default": false
+		},
+		{
+			"name": "Illumina",
+			"param": "--illumina",
+			"no_value": true,
+			"default": false
+		},
+		{
+			"name": "Nextera",
+			"param": "--nextera",
+			"no_value": true,
+			"default": false 
+		},
+		{
+			"name": "Small RNA",
+			"param": "--small_rna",
+			"no_value": true,
+			"default": false
+		},
+		{
+			"name": "Help",
+			"param": "-h",
+			"no_value": true,
+			"default": false
+		}
+	]
+}

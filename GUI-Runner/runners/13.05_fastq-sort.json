@@ -1,0 +1,38 @@
+{
+  "name": "13.05-Fastq-tools: Fastq-sort",
+  "script_path": "/GUI/conf/scripts/fastq-sort.sh",
+  "description": "Concatenate and sort FASTQ files and write to standard output",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Reverse",
+      "param": "-r",
+      "description": "Sort in reverse (i.e., descending) order"
+    },
+    {
+      "name": "By id",
+      "param": "-I",
+      "description": "Sort alphabetically by read identifier"
+    },
+    {
+      "name": "Numerical",
+      "param": "-N",
+      "description": "Sort alphanumerically by read identifier according to 'samtools sort -n'"
+    },
+    {
+      "name": "Sequence",
+      "param": "-S",
+      "description": "Sort alphabetically by sequence"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Help",
+      "description": "Print the help",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

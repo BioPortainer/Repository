@@ -1,0 +1,96 @@
+{
+	"name": "22.03-miRDeep2: Mapper",
+	"script_path": "/GUI/conf/scripts/R5.mapper.sh",
+	"description": "Processes reads and/or maps them to the reference genome",
+	"working_directory": "/root/workdir/data",
+	"parameters":[
+		{
+			"name": "Input file",
+			"type": "file_upload",
+			"required": true,
+			"description": "File in fasta, seq.txt or qseq.txt format. More input can be given depending on the options used"
+		},
+		{
+			"name": "Three-letter prefix",
+			"param": "-g",
+			"description": "Three-letter prefix for reads (by default 'seq').",
+			"default": "seq"
+		},
+		{
+			"name": "Discard short",
+			"param": "-l",
+			"description": "Discard reads shorter than int nts",
+			"type": "int"
+		},
+		{
+			"name": "Output processed",
+			"param": "-s",
+			"description": "Print processed reads to this file."
+		},
+		{
+			"name": "Output mapping",
+			"param": "-t",
+			"description": "Print read mappings to this file."
+		},
+		{
+			"name": "Other parameters",
+			"description": "Other parameters"
+		},
+		{
+			"name": "Input seq.txt",
+			"param": "-a",
+			"description": "Input file is seq.txt format.",
+			"no_value": true,
+			"default": false
+		},
+		{
+			"name": "Input qseq.txt",
+			"param": "-b",
+			"description": 	"Input file is qseq.txt format.",
+			"no_value": true,
+			"default": false
+		},
+		{
+			"name": "Input fasta",
+			"param": "-c",
+			"description": 	"Input file is fasta format.",
+			"no_value": true,
+			"default": false
+		},
+		{
+			"name": "Input fastq",
+			"param": "-e",
+			"description": 	"Input file is fastq format.",
+			"no_value": true,
+			"default": false
+		},
+		{
+			"name": "Input config",
+			"param": "-d",
+			"description": 	"Input file is a config file (see miRDeep2 documentation). Options -a, -b or -c must be given with option -d.",
+			"no_value": true,
+			"default": false
+		},
+		{
+			"name": "Fasta format",
+			"param": "-h",
+			"description": "Parse to fasta format.",
+			"no_value": true,
+			"default": false
+		},
+		{
+			"name": "RNA to DNA",
+			"param": "-i",
+			"description": "Convert rna to dna alphabet (to map against genome)",
+			"no_value": true,
+			"default": false
+		},
+		{
+			"name": "Remove weird",
+			"param": "-j",
+			"description": "Remove all entries that have a sequence that contains letters other than a,c,g,t,u,n,A,C,G,T,U,N.",
+			"no_value": true,
+			"default": false
+		}
+	]
+}

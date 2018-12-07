@@ -1,0 +1,38 @@
+{
+  "name": "20.05-Kallisto: Kallisto quant",
+  "script_path": "/GUI/conf/scripts/kallisto_quant.sh",
+  "description": "Computes equivalence classes for reads and quantifies abundances",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Index filename",
+      "param": "-i",
+      "required": true,
+      "description": "Filename for the kallisto index to be constructed for quantification"
+    },
+    {
+      "name": "Output Directory",
+      "param": "-o",
+      "required": true,
+      "description": "Directory to write output to"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Bias correct",
+      "param": "--bias",
+      "no_value": true,
+      "default": false,
+      "description": "Perform sequence based bias correction"
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Helpful help screen",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

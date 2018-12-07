@@ -1,0 +1,44 @@
+{
+  "name": "20.04-Kallisto: Kallisto pseudo",
+  "script_path": "/GUI/conf/scripts/kallisto_pseudo.sh",
+  "description": "Computes equivalence classes for reads and quantifies abundances",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Index filename",
+      "param": "-i",
+      "required": true,
+      "description": "Filename for the kallisto index to be used for pseudoalignment"
+    },
+    {
+      "name": "Output Directory",
+      "param": "-o",
+      "required": true,
+      "description": "Directory to write output to"
+    },
+    {
+      "name": "Threads",
+      "param": "-t",
+      "description": "Number of threads to use (default: 1)",
+      "default": "1"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Umi",
+      "param": "-u",
+      "no_value": true,
+      "default": false,
+      "description": "First file in pair is a UMI file"
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Helpful help screen",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

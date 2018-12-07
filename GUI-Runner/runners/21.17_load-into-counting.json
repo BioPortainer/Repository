@@ -1,0 +1,61 @@
+{
+  "name": "21.17-Khmer: Load-into-counting",
+  "script_path": "/GUI/conf/scripts/load-into-counting.sh",
+  "description": "Build a k-mer countgraph from the given sequences",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Output filename",
+      "description": "The name of the file to write the k-mer countgraph to."
+    },
+    {
+      "name": "FAST[AQ] input",
+      "description": "The names of one or more FAST[AQ] input sequence files."
+    },
+    {
+      "name": "Kmer size",
+      "param": "-k",
+      "description": "K-mer size"
+    },
+    {
+      "name": "Unique",
+      "param": "-U",
+      "description": "Approximate number of unique kmers in the input set"
+    },
+    {
+      "name": "Threads",
+      "param": "-T",
+      "description": "k-mer size to use"
+    },
+    {
+      "name": "Max memmory",
+      "param": "-M",
+      "description": "Maximum amount of memory to use for data structure"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "No big count",
+      "param": "-b",
+      "description": "The default behaviour is to count past 255 using bigcount. This flag turns bigcount off, limiting counts to 255",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Small count",
+      "param": "--small-count",
+      "description": "Reduce memory usage by using a smaller counter for individual kmers",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Show the help message and exit",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

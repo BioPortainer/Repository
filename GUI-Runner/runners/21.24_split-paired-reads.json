@@ -1,0 +1,45 @@
+{
+  "name": "21.24-Khmer: Split-paired-reads",
+  "script_path": "/GUI/conf/scripts/split-paired-reads.sh",
+  "description": "Split interleaved reads into two files, left and right",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Infile",
+      "description": "Infile"
+    },
+    {
+      "name": "Output dir",
+      "param": "-d",
+      "description": "Output split reads to specified directory. Creates directory if necessary"
+    },
+    {
+      "name": "Output 1st",
+      "param": "-1",
+      "description": "Output 'left' reads to this file"
+    },
+    {
+      "name": "Output 2nd",
+      "param": "-2",
+      "description": "Output 'right' reads to this file"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "Orphaned",
+      "param": "-0",
+      "description": "Allow 'orphaned' reads and extract them to this file",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Show the help message and exit",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

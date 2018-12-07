@@ -1,0 +1,36 @@
+{
+  "name": "21.19-Khmer: Merge-partitions",
+  "script_path": "/GUI/conf/scripts/merge-partitions.sh",
+  "description": "Merge partition map '.pmap' files",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Graphbase input",
+      "description": "Basename for input and output files."
+    },
+    {
+      "name": "Kmmer size",
+      "param": "-k",
+      "description": "k-mer size (default: 32)",
+      "default": "32"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+     {
+      "name": "Keep subsets",
+      "param": "--keep-subsets",
+      "description": "Keep individual subsets (default: False)",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Show the help message and exit",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

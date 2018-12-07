@@ -1,0 +1,35 @@
+{
+  "name": "21.22-Khmer: Readstats",
+  "script_path": "/GUI/conf/scripts/readstats.sh",
+  "description": "Display summary statistics for one or more FASTA/FASTQ files",
+  "working_directory": "/root/workdir/data",
+  "parameters": [
+    {
+      "name": "Input filenames",
+      "description": "Filenames"
+    },
+    {
+      "name": "Output",
+      "param": "-o",
+      "description": "output file for statistics; defaults to stdout"
+    },
+    {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
+      "name": "csv",
+      "param": "-h",
+      "description": "Use the CSV format for the statistics, including column headers",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Helpful help screen",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}
