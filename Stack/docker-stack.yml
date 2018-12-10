@@ -20,7 +20,6 @@ services:
 
   bioportainer-panel:
     image: bioportainer/bioportainer-panel
-    container_name: "bioportainer-panel"
     command: -H tcp://tasks.agent:9001 --tlsskipverify
     ports:
       - "9000:9000"
