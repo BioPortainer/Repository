@@ -1,6 +1,6 @@
 version: "3.3"
 services:
-  agent:
+  bioportainer-agent:
     image: portainer/agent
     environment:
       # REQUIRED: Should be equal to the service name prefixed by "tasks." when
