@@ -1,14 +1,9 @@
 Each script should be configured in conf/runners/conf-name.json file, where conf-name is an unique name for each script. Each configuration file should contain only one script. Configuration should be a valid JSON file.
 
-Configurable properties:
-
 ---
 
-Each script should be configured in conf/runners/conf-name.json file, where conf-name is an unique name for each script. Each configuration file should contain only one script. Configuration should be a valid JSON file.
-
-Examples of configuration files can be found in stable/testing/configs or see a full config at the bottom of the page.
-
 Configurable properties:
+
 
 - name
 - script_path
