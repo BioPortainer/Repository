@@ -1,12 +1,12 @@
 {
   "name": "21.18-Khmer: Make-initial-stoptags",
-  "script_path": "/GUI/conf/scripts/make-initial-stoptags.sh",
+  "script_path": "conf/scripts/make-initial-stoptags.sh",
   "description": "Find an initial set of highly connected k-mers",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Graphbase input",
-      "description": "Basename for input and output filenames."
+      "description": "Basename for input and output filenames"
     },
     {
       "name": "Kmer size",

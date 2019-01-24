@@ -1,12 +1,13 @@
 {
   "name": "09.10-Deeptools: estimateReadFiltering",
-  "script_path": "/GUI/conf/scripts/estimateReadFiltering.sh",
+  "script_path": "conf/scripts/estimateReadFiltering.sh",
   "description": "Estimates the number of reads that would be filtered given a set of settings and prints this to the terminal. Further, it tracks the number of singleton reads",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Input bam files",
       "param": "-b",
+      "required": true,
       "description": "List of indexed BAM files separated by spaces."
     },
     {
@@ -17,12 +18,7 @@
     {
       "name": "Labels",
       "param": "--sampleLabels",
-      "description": "Labels for the samples. The default is to use the file name of the sample. The sample labels should be separated by spaces and quoted if a label itselfcontains a space E.g. –sampleLabels label-1 “label 2”"
-    },
-    {
-      "name": "Smart Labels",
-      "param": "--smartLabels",
-      "description": "Instead of manually specifying labels for the input BAM files, this causes deepTools to use the file name after removing the path and extension"
+      "description": "Labels for the samples. The default is to use the file name of the sample. The sample labels should be separated by spaces and quoted if a label itself contains a space E.g. –sampleLabels label-1 “label 2”"
     },
     {
       "name": "Bin size",
@@ -42,6 +38,20 @@
     {
       "name": "Other parameters",
       "description": "Other parameters"
+    },
+    {
+      "name": "Smart Labels",
+      "param": "--smartLabels",
+      "description": "Instead of manually specifying labels for the input BAM files, this causes deepTools to use the file name after removing the path and extension",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Show the help message and exit",
+      "no_value": true,
+      "default": false
     }
   ]
 }

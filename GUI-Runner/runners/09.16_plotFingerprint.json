@@ -1,13 +1,34 @@
 {
   "name": "09.16-Deeptools: plotFingerprint",
-  "script_path": "/GUI/conf/scripts/plotFingerprint.sh",
+  "script_path": "conf/scripts/plotFingerprint.sh",
   "description": "This quality control will most likely be of interest for you if you are dealing with ChIP-seq samples as a pressing question in ChIP-seq experiments is “Did my ChIP work?”, i.e. did the antibody-treatment enrich sufficiently so that the ChIP signal can be separated from the background signal? (After all, around 90% of all DNA fragments in a ChIP experiment will represent the genomic background)",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Bam inputs",
       "param": "--bamfiles",
+      "required": true,
       "description": "List of BAM files to process"
+    },
+    {
+      "name": "Output",
+      "param": "-o",
+      "description": "File name of the output figure. The file ending will be used to determine the image format. The available options are typically: “png”, “eps”, “pdf” and “svg”, e.g. : fingerprint.png"
+    },
+    {
+      "name": "Labels",
+      "param": "-l",
+      "description": "List of labels to use in the output. If not given, the file names will be used instead. Separate the labels by spaces"
+    },
+    {
+      "name": "Bin size",
+      "param": "--binSize",
+      "description": "Window size in base pairs to sample the genome"
+    },
+    {
+      "name": "Number of samples",
+      "param": "-n",
+      "description": "Number of bins that sampled from the genome, for which the overlapping number of reads is computed"
     },
     {
       "name": "Plot format",
@@ -23,58 +44,29 @@
       ]
     },
     {
+      "name": "Title",
+      "param": "--plotTitle",
+      "description": "Title of the plot, to be printed on top of the generated image. Leave blank for no title"
+    },
+    {
       "name": "Processors",
       "param": "--numberOfProcessors",
       "description": "Number of processors to use. The default is to use 1."
     },
     {
-      "name": "Samples label",
-      "param": "--samplesLabel",
-      "description": "Labels for the samples plotted. The default is to usethe file name of the sample. The sample labels shouldbe separated by spaces and quoted if a labelitselfcontains a space E.g. --samplesLabel label-1'label 2'"
-    },
-    {
-      "name": "Title",
-      "param": "--plotTitle",
-      "description": "Title of the plot, to be printed on top of the generated image. Leave blank for no title."
-    },
-    {
-      "name": "Max Fragment Length",
-      "param": "--maxFragmentLength",
-      "description": "The maximum fragment length in the histogram. A value of 0 (the default) indicates to use twice the mean fragment length"
-    },
-    {
-      "name": "Bin size",
-      "param": "--binSize",
-      "description": "Length in bases of the window used to sample the genome. (default 1000)"
-    },
-    {
-      "name": "Bins distance",
-      "param": "--distanceBetweenBins",
-      "description": "To reduce the computation time, not every possiblegenomic bin is sampled. This option allows you to setthe distance between bins actually sampled from.Larger numbers are sufficient for high coveragesamples, while smaller values are useful for lowercoverage samples. Note that if you specify a valuethat results in too few (<1000) reads sampled, thevalue will be decreased. (default 1000000)"
-    },
-    {
       "name": "Black list",
       "param": "--blackListFileName",
+      "type": "file_upload",
       "description": "A BED file containing regions that should be excludedfrom all analyses. Currently this works by rejectinggenomic chunks that happen to overlap an entry.Consequently, for BAM files, if a read partiallyoverlaps a blacklisted region or a fragment spans overit, then the read/fragment might still be considered."
-    },
-    {
-      "name": "Table",
-      "param": "--table",
-      "description": "In addition to printing read and fragment length metrics to the screen, write them to the given file in tabular format."
-    },
-    {
-      "name": "Raw Fragment Lengths",
-      "param": "--outRawFragmentLengths",
-      "description": "Save the fragment (or read if the input is single-end)length and their associated number of occurrences to atab-separated file. Columns are length, number ofoccurrences, and the sample label."
     },
     {
       "name": "Other parameters",
       "description": "Other parameters"
     },
     {
-      "name": "Log scale",
-      "param": "--logScale",
-      "description": "Plot on the log scale",
+      "name": "Help",
+      "param": "--h",
+      "description": "Show the help message and exit",
       "no_value": true,
       "default": false
     }

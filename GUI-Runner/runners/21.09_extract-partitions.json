@@ -1,8 +1,8 @@
 {
   "name": "21.09-Khmer: Extract-partitions",
-  "script_path": "/GUI/conf/scripts/extract-partitions.sh",
+  "script_path": "conf/scripts/extract-partitions.sh",
   "description": "Separate sequences that are annotated with partitions into grouped files",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Output prefix",
@@ -10,6 +10,7 @@
     },
     {
       "name": "Input partition",
+      "type": "file_upload",
       "description": "Input partition filename"
     },
     {
@@ -23,18 +24,36 @@
       "description": "Minimum partition size worth keeping"
     },
     {
+      "name": "Other parameters",
+      "description": "Other parameters"
+    },
+    {
       "name": "No output groups",
       "param": "-n",
-      "description": "Do not actually output groups files"
+      "description": "Do not actually output groups files",
+      "no_value": true,
+      "default": false
     },
     {
       "name": "Output unassigned",
       "param": "-U",
-      "description": "Output unassigned sequences, too"
+      "description": "Output unassigned sequences, too",
+      "no_value": true,
+      "default": false
     },
     {
-      "name": "Other parameters",
-      "description": "Other parameters"
+      "name": "Gzip",
+      "param": "--gzip",
+      "description": "Compress output using gzip",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Bzip",
+      "param": "--bzip",
+      "description": "Compress output using bzip2",
+      "no_value": true,
+      "default": false
     },
     {
       "name": "Help",

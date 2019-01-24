@@ -1,18 +1,26 @@
 {
   "name": "14.01-Fastx tool kit: FASTA clipping histogram",
-  "script_path": "/GUI/conf/scripts/D14_FASTA_Clipping_Histogram.sh",
+  "script_path": "conf/scripts/D14_FASTA_Clipping_Histogram.sh",
   "description": "Create a Linker Clipping Information Histogram",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Input",
+      "type": "file_upload",
       "required": true,
-      "description": "input file (in FASTA format, can be GZIPped)"
+      "description": "Input file (in FASTA format, can be GZIPped)"
     },
     {
       "name": "Output",
-      "required": true,
+      "required": false,
       "description": "Histogram image"
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "no_value": true,
+      "default": false,
+      "description": "Help"
     }
   ]
 }

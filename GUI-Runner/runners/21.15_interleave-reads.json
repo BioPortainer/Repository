@@ -1,15 +1,17 @@
 {
   "name": "21.15-Khmer: Interleave-reads",
-  "script_path": "/GUI/conf/scripts/interleave-reads.sh",
+  "script_path": "conf/scripts/interleave-reads.sh",
   "description": "Produce interleaved files from R1/R2 paired files",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Left file",
+      "type": "file_upload",
       "description": "Left file."
     },
     {
       "name": "Right file",
+      "type": "file_upload",
       "description": "Right file."
     },
     {

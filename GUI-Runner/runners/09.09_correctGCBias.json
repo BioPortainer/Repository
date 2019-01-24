@@ -1,32 +1,37 @@
 {
   "name": "09.09-Deeptools: correctGCBias",
-  "script_path": "/GUI/conf/scripts/correctGCBias.sh",
+  "script_path": "conf/scripts/correctGCBias.sh",
   "description": "Corrects the GC-bias using the method proposed by [Benjamini & Speed (2012)",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "BAM file",
       "param": "-b",
+      "required": true,
       "description": "Sorted BAM file to correct. (default: None)"
     },
     {
       "name": "Effective size",
       "param": "--effectiveGenomeSize",
+      "required": true,
       "description": "The effective genome size is the portion of the genome that is mappable. Large fractions of the genome are stretches of NNNN that should be discarded. Also, if repetitive regions were not included in the mapping of reads, the effective genome size needs to be adjusted accordingly. A table of values is available here: http://deeptools.readthedocs.io/en/latest/content/feature/ effectiveGenomeSize.html . (default: None)"
     },
     {
       "name": "Genome",
       "param": "-g",
+      "type": "file_upload",
+      "required": true,
       "description": "Genome in two bit format. Most genomes can be found here: http://hgdownload.cse.ucsc.edu/gbdb/ Search for the .2bit ending. Otherwise, fasta files can be converted to 2bit using faToTwoBit available here: http://hgdownload.cse.ucsc.edu/admin/exe/ (default:None)"
     },
     {
       "name": "Frequencies File",
-      "param": "--GCbiasFrequenciesFile",
+      "type": "file_upload",
+      "param": "-freq",
       "description": "Indicate the output file from computeGCBias containing the observed and expected read frequencies per GC-content."
     },
     {
-      "name": "Output file",
-      "param": "--correctedFile",
+      "name": "Corrected output",
+      "param": "-o",
       "description": "Name of the corrected file. The ending will be used to decide the output file format. The options are .bam, .bw for a bigWig file, .bg for a bedGraph file. (default: None)"
     },
     {

@@ -1,15 +1,17 @@
 {
   "name": "21.13-Khmer: Filter-stoptags",
-  "script_path": "/GUI/conf/scripts/filter-stoptags.sh",
+  "script_path": "conf/scripts/filter-stoptags.sh",
   "description": "Trim sequences at stoptags",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Input stoptags",
+      "type": "file_upload",
       "description": "Input stoptags filename."
     },
     {
       "name": "Input sequence",
+      "type": "file_upload",
       "description": "Input sequence filename."
     },
     {

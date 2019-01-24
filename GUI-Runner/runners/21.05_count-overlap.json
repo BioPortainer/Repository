@@ -1,46 +1,6 @@
 {
   "name": "21.05-Khmer: Count-overlap",
-  "script_path": "/GUI/conf/scripts/count-overlap.sh",
-  "description": "Count the overlap k-mers which are the k-mers appearing in two sequence datasets",
-  "working_directory": "/root/workdir/data",
-  "parameters": [
-    {
-      "name": "Presence table",
-      "description": "Input k-mer presence table filename."
-    },
-    {
-      "name": "Input sequence",
-      "description": "Input sequence filename."
-    },
-    {
-      "name": "Output filename",
-      "description": "Output report filename."
-    },
-    {
-      "name": "Kmer size",
-      "param": "-k",
-      "description": "k-mer size to use"
-    },
-    {
-      "name": "Tables",
-      "param": "-N",
-      "description": "Number of k-mer counting tables to use"
-    },
-    {
-      "name": "Min table size",
-      "param": "-x",
-      "description": "lower bound on tablesize to use"
-    },
-    {
-      "name": "Other parameters",
-      "description": "Other parameters"
-    },
-    {
-      "name": "Help",
-      "param": "-h",
-      "description": "Show the help message and exit",
-      "no_value": true,
-      "default": false
-    }
-  ]
+  "script_path": "conf/scripts/count-overlap.sh",
+  "description": "Sorry! This script was removed since Khmer version 2.0, as informed here https://github.com/dib-lab/khmer/blob/master/doc/release-notes/release-2.0.md.\nCount the overlap k-mers which are the k-mers appearing in two sequence datasets",
+  "working_directory": "./"
 }

@@ -1,11 +1,12 @@
 {
-  "name": "19-GMAP fusion",
-  "script_path": "/GUI/conf/scripts/D19_gmap-fusion.sh",
+  "name": "18-GMAP fusion",
+  "script_path": "conf/scripts/D19_gmap-fusion.sh",
   "description": "Utility for identifying candidate fusion transcripts based on transcript sequences reconstructed via RNA-Seq de novo transcriptome assembly",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Transcripts",
+      "type": "file_upload",
       "param": "--transcripts",
       "description": "transcript fasta file",
       "required": true
@@ -18,13 +19,27 @@
     },
     {
       "name": "R1",
+      "type": "file_upload",
       "param": "--left_fq",
       "description": "Illumina paired-end reads /1"
     },
     {
       "name": "R2",
+      "type": "file_upload",
       "param": "--right_fq",
       "description": "Illumina paired-end reads /2"
+    },
+    {
+      "name": "Threads",
+      "param": "--CPU",
+      "default": "4",
+      "description": "number threads for GMAP (default 4)"
+    },
+    {
+      "name": "Output dir",
+      "param": "--output",
+      "default": "GMAP_Fusion",
+      "description": "output directory name (default: GMAP_Fusion)"
     },
     {
       "name": "Other parameters",

@@ -1,15 +1,17 @@
 {
   "name": "21.04-Khmer: Count-median",
-  "script_path": "/GUI/conf/scripts/count-median.sh",
+  "script_path": "conf/scripts/count-median.sh",
   "description": "Count k-mers summary stats for sequences",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Countgraph filename",
+      "type": "file_upload",
       "description": "input k-mer countgraph filename"
     },
     {
       "name": "FAST[AQ] sequence",
+      "type": "file_upload",
       "description": "Input FAST[AQ] sequences to annotate."
     },
     {

@@ -1,8 +1,8 @@
 {
   "name": "21.21-Khmer: Partition-graph",
-  "script_path": "/GUI/conf/scripts/partition-graph.sh",
+  "script_path": "conf/scripts/partition-graph.sh",
   "description": "Partition a sequence graph based upon waypoint connectivity",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Basename input",
@@ -12,6 +12,11 @@
       "name": "Stoptags",
       "param": "-S", 
       "description": "Use stoptags in this file during partitioning"
+    },
+    {
+      "name": "Subset size",
+      "param": "-s", 
+      "description": "Set subset size (usually 1e5-1e6 is good)"
     },
     {
       "name": "Threads",

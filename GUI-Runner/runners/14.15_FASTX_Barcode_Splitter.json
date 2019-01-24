@@ -1,19 +1,25 @@
 {
   "name": "14.15-Fastx tool kit: FASTX barcode splitter",
-  "script_path": "/GUI/conf/scripts/D15_FASTX_Barcode_Splitter.sh",
-  "description": "This program reads FASTA/FASTQ file and splits it into several smaller file, based on barcode matching",
-  "working_directory": "/root/workdir/data",
+  "script_path": "conf/scripts/D15_FASTX_Barcode_Splitter.sh",
+  "description": "This program reads FASTA/FASTQ file and splits it into several smaller file, based on barcode matching \n ATENTION: Please make sure that the file extension of your reads is '.fastq' in order to the script work",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Barcodes file",
       "param": "--bcfile",
+      "type": "file_upload",
       "required": true,
       "description": "Barcodes file name"
     },
     {
       "name": "File prefix",
       "param": "--prefix",
-      "description": "File prefix. will be added to the output files. Can be used to specify output directories."
+      "description": "File prefix. will be added to the output files. Can be used to specify output directories"
+    },
+    {
+      "name": "File suffix",
+      "param": "--suffix",
+      "description": "File suffix. will be added to the output files. Can be used to specify file extensions"
     },
     {
       "name": "Max mismatches",
@@ -22,8 +28,43 @@
       "default": 1
     },
     {
+      "name": "Partial",
+      "param": "--partial",
+      "description": "Number of allowed non-overlapping bases"
+    },
+    {
+      "name": "Bol/Eol",
+      "description": "Try to match barcodes at the BEGINNING of sequences. (What biologists would call the 5' end, and programmers would call index 0.)",
+      "type": "list",
+      "values": [
+        "--bol",
+        "--eol"
+      ]
+    },
+    {
       "name": "Other parameters",
       "description": "Other parameters"
+    },
+    {
+      "name": "Exact",
+      "param":"--exact",
+      "description": "Same as '--mismatches 0'. If both --exact and --mismatches are specified, '--exact' takes precedence",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Quiet",
+      "param":"--quiet",
+      "description": "Don't print counts and summary at the end of the run",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Debug",
+      "param":"--Debug",
+      "description": "Print lots of useless debug information to STDERR",
+      "no_value": true,
+      "default": false
     },
     {
       "name": "Help",

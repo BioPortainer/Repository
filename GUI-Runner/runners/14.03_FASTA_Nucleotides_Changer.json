@@ -1,12 +1,13 @@
 {
   "name": "14.03-Fastx tool kit: FASTA nucleotides changer",
-  "script_path": "/GUI/conf/scripts/D13_FASTA_Nucleotides_Changer.sh",
+  "script_path": "conf/scripts/D13_FASTA_Nucleotides_Changer.sh",
   "description": "Convets FASTA sequences from/to RNA/DNA",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Input",
       "param": "-i",
+      "type": "file_upload",
       "required": true,
       "description": "FASTA/Q input file. default is STDIN"
     },
@@ -33,6 +34,20 @@
       "no_value": true,
       "default": false,
       "description": "RNA-to-DNA mode - change U's into T's"
+    },
+    {
+      "name": "GZIP",
+      "param": "-z",
+      "no_value": true,
+      "default": false,
+      "description": "Compress output with GZIP"
+    },
+    {
+      "name": "Verbose",
+      "param": "-v",
+      "no_value": true,
+      "default": false,
+      "description": "Verbose mode. Prints a short summary. with [-o], summary is printed to STDOUT. Otherwise, summary is printed to STDERR"
     },
     {
       "name": "Help",

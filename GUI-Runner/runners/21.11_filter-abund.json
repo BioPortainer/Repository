@@ -1,16 +1,18 @@
 {
   "name": "21.11-Khmer: Filter-abund",
-  "script_path": "/GUI/conf/scripts/filter-abund.sh",
+  "script_path": "conf/scripts/filter-abund.sh",
   "description": "Trim sequences at a minimum k-mer abundance",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
-      "name": "Presence table input",
-      "description": "The input k-mer presence table filename"
+      "name": "Input count graph",
+      "type": "file_upload",
+      "description": "The input k-mer countgraph filename"
     },
     {
       "name": "FAST[AQ] input",
-      "description": "Input FAST[AQ] sequence filename."
+      "type": "file_upload",
+      "description": "Input FAST[AQ] sequence filename"
     },
     {
       "name": "Output",
@@ -18,24 +20,14 @@
       "description": "Output the trimmed sequences into a single file with the given filename instead of creating a new file for each input file"
     },
     {
-      "name": "K-mer size",
-      "param": "-k",
-      "description": "k-mer size to use"
-    },
-    {
       "name": "Tables",
       "param": "-N",
-      "description": "number of k-mer counting tables to use"
+      "description": "Number of k-mer counting tables to use"
     },
     {
       "name": "Threads",
       "param": "-T",
-      "description": "k-mer size to use"
-    },
-    {
-      "name": "Min table size",
-      "param": "-x",
-      "description": "lower bound on tablesize to use"
+      "description": "Number of simultaneous threads to execute"
     },
     {
       "name": "Cutoff",
@@ -52,9 +44,23 @@
       "description": "Other parameters"
     },
     {
-      "name": "Help",
+      "name": "Variable coverage",
       "param": "-V",
       "description": "Only trim low-abundance k-mers from sequences that have high coverage",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Gzip",
+      "param": "--gzip",
+      "description": "Compress output using gzip",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Bzip",
+      "param": "--bzip",
+      "description": "Compress output using bzip2",
       "no_value": true,
       "default": false
     },

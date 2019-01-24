@@ -1,8 +1,8 @@
 {
   "name": "09.14-Deeptools: plotCoverage",
-  "script_path": "/GUI/conf/scripts/plotCoverage.sh",
+  "script_path": "conf/scripts/plotCoverage.sh",
   "description": "Generates a panel of two plots. The first one simply represents the frequencies of the found read coverages, which helps you judge how relevant the mean coverage value (printed next to the sample name) is. If the distribution of read coverages is more or less homoskedatic and, ideally, normally distributed (most likely it won’t be), then the mean is a very appropriate proxy for sequencing depth",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Bam inputs",
@@ -24,6 +24,45 @@
       "name": "Plot title",
       "param": "-T",
       "description": "Title of the plot, to be printed on top of the generated image. Leave blank for no title"
+    },
+    {
+      "name": "Number of samples",
+      "param": "-n",
+      "description": "Number of 1 bp regions to sample. Default 1 million"
+    },
+    {
+      "name": "Height",
+      "param": "--plotHeight",
+      "description": "Plot height in cm"
+    },
+    {
+      "name": "Width",
+      "param": "--plotWidth",
+      "description": "Plot width in cm"
+    },
+    {
+      "name": "Plot format",
+      "param": "--plotFileFormat",
+      "description": "Image format type. If given, this option overrides the image format based on the plotFile ending. The available options are: png, eps, pdf and svg",
+      "type": "list",
+      "values": [
+        "png",
+        "pdf",
+        "svg",
+        "eps",
+        "plotly"
+      ]
+    },
+    {
+      "name": "Blacklist",
+      "param": "-bl",
+      "type": "file_upload",
+      "description": "A BED or GTF file containing regions that should be excluded from all analyses. Currently this works by rejecting genomic chunks that happen to overlap an entry. Consequently, for BAM files, if a read partially overlaps a blacklisted region or a fragment spans over it, then the read/fragment might still be considered. Please note that you should adjust the effective genome size, if relevant"
+    },
+    {
+      "name": "Processors",
+      "param": "-p",
+      "description": "Number of processors to use. Type “max/2” to use half the maximum number of processors or “max” to use all available processors"
     },
     {
       "name": "Other parameters",

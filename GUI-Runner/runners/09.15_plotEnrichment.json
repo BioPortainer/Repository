@@ -1,8 +1,8 @@
 {
   "name": "09.15-Deeptools: plotEnrichment",
-  "script_path": "/GUI/conf/scripts/plotEnrichment.sh",
+  "script_path": "conf/scripts/plotEnrichment.sh",
   "description": "Tool for calculating and plotting the signal enrichment in either regions in BED format or feature types (column 3) in GTF format",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Bam inputs",
@@ -13,6 +13,7 @@
     {
       "name": "BED",
       "param": "--BED",
+      "type": "file_upload",
       "description": "Limits the enrichment analysis to the regions specified in these BED/GTF files. Enrichment iscalculated as the number of reads overlapping eachfeature type. The feature type is column 3 in a GTFfile and 'peak for BED files.",
       "required": true
     },
@@ -50,6 +51,31 @@
       ]
     },
     {
+      "name": "Height",
+      "param": "--plotHeight",
+      "description": "Plot width in cm. The minimum value is 1 cm"
+    },
+    {
+      "name": "Width",
+      "param": "--plotWidth",
+      "description": "Plot width in cm"
+    },
+    {
+      "name": "Colors",
+      "param": "--colors",
+      "description": "List of colors to use for the plotted lines. Color names and html hex strings (e.g., #eeff22) are accepted. The color names should be space separated. For example, –colors red blue green"
+    },
+    {
+      "name": "Plots per row",
+      "param": "--numPlotsPerRow",
+      "description": "Number of plots per row"
+    },
+    {
+      "name": "Processors",
+      "param": "-p",
+      "description": "Number of processors to use. Type “max/2” to use half the maximum number of processors or “max” to use all available processors"
+    },
+    {
       "name": "Other parameters",
       "description": "Other parameters"
     },
@@ -61,9 +87,30 @@
       "default": false
     },
     {
+      "name": "Output raw counts",
+      "param": "--outRawCounts",
+      "description": "Save the counts per region to a tab-delimited file",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Per sample",
+      "param": "--perSample",
+      "description": "Group the plots by sample, rather than by feature type (the default)",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Variable scales",
+      "param": "--variableScales",
+      "description": "Group the plots by sample, rather than by feature type (the default)",
+      "no_value": true,
+      "default": false
+    },
+    {
       "name": "Help",
       "param": "--help",
-      "description": "Instead of manually specifying labels for the input BAM files, this causes deepTools to use the file name after removing the path and extension.",
+      "description": "By default, the y-axes are always 0-100. This allows the axis range to be restricted",
       "no_value": true,
       "default": false
     }

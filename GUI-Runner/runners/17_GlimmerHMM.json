@@ -1,12 +1,18 @@
 {
   "name": "17-GlimmerHMM",
-  "script_path": "/GUI/conf/scripts/D17_GlimmerHMM.sh",
-  "description": "Gene finder based on a Generalized Hidden Markov Model (GHMM)",
-  "working_directory": "/root/workdir/data",
+  "script_path": "conf/scripts/D17_GlimmerHMM.sh",
+  "description": "Gene finder based on a Generalized Hidden Markov Model (GHMM).\nMust install GLimmerHMM from https://ccb.jhu.edu/software/glimmerhmm/ and run 'make' in the train folder first",
+  "working_directory": "./",
   "parameters": [
+    {
+      "name": "Genome file",
+      "type": "file_upload",
+      "description": "Genome file"
+    },
     {
       "name": "Protein domain searches",
       "param": "-p",
+      "type": "file_upload",
       "description": "If protein domain searches are available, read them from file file_name"
     },
     {

@@ -1,15 +1,17 @@
 {
   "name": "21.02-Khmer: Abundance-dist",
-  "script_path": "/GUI/conf/scripts/abundance-dist.sh",
+  "script_path": "conf/scripts/abundance-dist.sh",
   "description": "Calculate abundance distribution of the k-mers in the sequence file using a pre-made k-mer countgraph",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "k-mer countgraph",
+      "type": "file_upload",
       "description": "The name of the input k-mer countgraph file."
     },
     {
       "name": "FAST[AQ] sequence",
+      "type": "file_upload",
       "description": "The name of the input FAST[AQ] sequence file."
     },
     {

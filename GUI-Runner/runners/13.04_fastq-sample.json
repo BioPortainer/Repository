@@ -1,11 +1,12 @@
 {
   "name": "13.04-Fastq-tools: Fastq-sample",
-  "script_path": "/GUI/conf/scripts/fastq-sample.sh",
+  "script_path": "conf/scripts/fastq-sample.sh",
   "description": "Sample random reads from a FASTQ file",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Input files",
+      "type": "file_upload",
       "description": "Input files"
     },
     {

@@ -1,8 +1,8 @@
 {
   "name": "21.19-Khmer: Merge-partitions",
-  "script_path": "/GUI/conf/scripts/merge-partitions.sh",
+  "script_path": "conf/scripts/merge-partitions.sh",
   "description": "Merge partition map '.pmap' files",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Graphbase input",

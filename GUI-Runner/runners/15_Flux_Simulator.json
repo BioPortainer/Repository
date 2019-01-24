@@ -1,14 +1,24 @@
 {
   "name": "15-Flux simulator",
-  "script_path": "/GUI/conf/scripts/D16_Flux_Simulator.sh",
+  "script_path": "conf/scripts/D16_Flux_Simulator.sh",
   "description": "Modeling RNA-Seq experiments in silico: sequencing reads are produced from a reference genome according annotated transcripts",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Parameter file",
       "param": "-p",
+      "type": "list",
+      "values": {
+        "script": "ls ./"
+      },
       "required": true,
       "description": "Specify parameter file (PAR file)"
+    },
+    {
+      "name": "Threads",
+      "param": "--threads",
+      "defaut": "2",
+      "description": "Maximum number of threads to use. Default 2)"
     },
     {
       "name": "Other parameters",
@@ -40,6 +50,20 @@
       "param": "-o",
       "no_value": true,
       "description": "Print default parameters.",
+      "default": false
+    },
+    {
+      "name": "Force",
+      "param": "--force",
+      "no_value": true,
+      "description": "Disable interactivity. No questions will be asked",
+      "default": false
+    },
+    {
+      "name": "Version",
+      "param": "-v",
+      "no_value": true,
+      "description": "Show version information",
       "default": false
     },
     {

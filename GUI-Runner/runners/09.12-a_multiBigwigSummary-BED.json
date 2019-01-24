@@ -1,0 +1,79 @@
+{
+  "name": "09.12-a-Deeptools: MultiBigwigSummary-BED",
+  "script_path": "conf/scripts/multiBigwigSummary-BED.sh",
+  "description": "Given typically two or more bigWig files, computes the average scores for each of the files in every genomic region",
+  "working_directory": "./",
+  "parameters": [
+    {
+      "name": "Bw inputs",
+      "param": "-b",
+      "description": "List of bigWig files, separated by spaces",
+      "required": true
+    },
+    {
+      "name": "Ouput file",
+      "param": "-o",
+      "description": "File name to save the coverage matrix. This matrix can be subsequently plotted using plotCorrelation or or plotPCA",
+      "required": true
+    },
+    {
+      "name": "BED",
+      "param": "--BED",
+      "type": "file_upload",
+      "description": "Limits the coverage analysis to the regions specified in these files",
+      "required": true
+    },
+    {
+      "name": "Labels",
+      "param": "-l",
+      "description": "User defined labels instead of default labels from file names. Multiple labels have to be separated by spaces, e.g., –labels sample1 sample2 sample3"
+    },
+    {
+      "name": "Chromosomes to skip",
+      "type": "file_upload",
+      "param": "--chromosomesToSkip",
+      "description": "List of chromosomes that you do not want to be included. Useful to remove “random” or “extra” chr"
+    },
+    {
+      "name": "Region",
+      "param": "-r",
+      "description": "Region of the genome to limit the operation to - this is useful when testing parameters to reduce the computing time. The format is chr:start:end, for example –region chr10 or –region chr10:456700:891000"
+    },
+    {
+      "name": "Black list",
+      "type": "file_upload",
+      "param": "-bl",
+      "description": "A BED or GTF file containing regions that should be excluded from all analyses. Currently this works by rejecting genomic chunks that happen to overlap an entry. Consequently, for BAM files, if a read partially overlaps a blacklisted region or a fragment spans over it, then the read/fragment might still be considered. Please note that you should adjust the effective genome size, if relevant"
+    },
+    {
+      "name": "Processors",
+      "param": "-p",
+      "description": "Number of processors to use. Type “max/2” to use half the maximum number of processors or “max” to use all available processors"
+    },
+    {
+      "name": "Other parameters",
+      "param": "Other parameters"
+    },
+    {
+      "name": "Smart labels",
+      "param": "--smartLabels",
+      "description": "Instead of manually specifying labels for the input bigWig files, this causes deepTools to use the file name after removing the path and extension.",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Version",
+      "param": "--version",
+      "description": "show program's version number and exit",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Help",
+      "param": "-h",
+      "description": "Show the help message and exit",
+      "no_value": true,
+      "default": false
+    }
+  ]
+}

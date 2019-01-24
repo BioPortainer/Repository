@@ -1,12 +1,13 @@
 {
   "name": "19-HUMANN2",
-  "script_path": "/GUI/conf/scripts/humann2.sh",
+  "script_path": "conf/scripts/humann2.sh",
   "description": "HUMAnN2: The HMP Unified Metabolic Analysis Network 2",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Input",
       "param": "-i",
+      "type": "file_upload",
       "required": true,
       "description": "Input file of type {fastq,fastq.gz,fasta,fasta.gz,sam,bam,blastm8,genetable,biom}"
     },

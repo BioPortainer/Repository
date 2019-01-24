@@ -1,5 +1,5 @@
 {
-  "name": "03-Bowtie 1.2.2",
+  "name": "02-Bowtie 1.2.2",
   "script_path": "conf/scripts/bowtie.sh",
   "description": "Ultrafast, memory-efficient short read aligner geared toward quickly aligning large sets of short DNA sequences (reads) to large genomes. It aligns 35-base-pair reads to the human genome at a rate of 25 million reads per hour on a typical workstation",
   "working_directory": "./",

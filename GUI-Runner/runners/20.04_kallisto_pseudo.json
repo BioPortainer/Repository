@@ -1,11 +1,24 @@
 {
   "name": "20.04-Kallisto: Kallisto pseudo",
-  "script_path": "/GUI/conf/scripts/kallisto_pseudo.sh",
+  "script_path": "conf/scripts/kallisto_pseudo.sh",
   "description": "Computes equivalence classes for reads and quantifies abundances",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
+      "name": "Input reads",
+      "type": "file_upload",
+      "required": true,
+      "description": "Input reads (If not paired-ended, check the option 'single')"
+    },
+    {
+      "name": "Input reads R2",
+      "type": "file_upload",
+      "required": true,
+      "description": "Input reads R2"
+    },
+    {
       "name": "Index filename",
+      "type": "file_upload",
       "param": "-i",
       "required": true,
       "description": "Filename for the kallisto index to be used for pseudoalignment"
@@ -23,6 +36,22 @@
       "default": "1"
     },
     {
+      "name": "Batch",
+      "type": "file_upload",
+      "param": "-b",
+      "description": "Process files listed in FILE"
+    },
+    {
+      "name": "Fragment length",
+      "param": "-l",
+      "description": "Estimated average fragment length"
+    },
+    {
+      "name": "Frag length SD",
+      "param": "-s",
+      "description": "Estimated standard deviation of fragment length"
+    },
+    {
       "name": "Other parameters",
       "description": "Other parameters"
     },
@@ -34,11 +63,11 @@
       "description": "First file in pair is a UMI file"
     },
     {
-      "name": "Help",
-      "param": "-h",
-      "description": "Helpful help screen",
+      "name": "Single",
+      "param": "--single",
       "no_value": true,
-      "default": false
+      "default": false,
+      "description": "Quantify single-end reads"
     }
   ]
 }

@@ -1,14 +1,27 @@
 {
   "name": "20.05-Kallisto: Kallisto quant",
-  "script_path": "/GUI/conf/scripts/kallisto_quant.sh",
+  "script_path": "conf/scripts/kallisto_quant.sh",
   "description": "Computes equivalence classes for reads and quantifies abundances",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
+      "name": "Input reads",
+      "type": "file_upload",
+      "required": true,
+      "description": "Input reads (If not paired-ended, check the option 'single')"
+    },
+    {
+      "name": "Input reads R2",
+      "type": "file_upload",
+      "required": true,
+      "description": "Input reads R2"
+    },
+    {
       "name": "Index filename",
+      "type": "file_upload",
       "param": "-i",
       "required": true,
-      "description": "Filename for the kallisto index to be constructed for quantification"
+      "description": "Filename for the kallisto index to be used for pseudoalignment"
     },
     {
       "name": "Output Directory",
@@ -26,13 +39,6 @@
       "no_value": true,
       "default": false,
       "description": "Perform sequence based bias correction"
-    },
-    {
-      "name": "Help",
-      "param": "-h",
-      "description": "Helpful help screen",
-      "no_value": true,
-      "default": false
     }
   ]
 }

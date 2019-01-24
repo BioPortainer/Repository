@@ -1,8 +1,8 @@
 {
   "name": "21.16-Khmer: Load-graph",
-  "script_path": "/GUI/conf/scripts/load-graph.sh",
+  "script_path": "conf/scripts/load-graph.sh",
   "description": "Load sequences into the compressible graph format plus optional tagset",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Output filename",
@@ -10,6 +10,7 @@
     },
     {
       "name": "FAST[AQ] input",
+      "type": "file_upload",
       "description": "Input FAST[AQ] sequence filename."
     },
     {
@@ -25,7 +26,7 @@
     {
       "name": "Threads",
       "param": "-T",
-      "description": "k-mer size to use"
+      "description": "Number of simultaneous threads to execute"
     },
     {
       "name": "Max memmory",

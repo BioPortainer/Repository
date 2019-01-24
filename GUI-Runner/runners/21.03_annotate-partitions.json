@@ -1,8 +1,8 @@
 {
   "name": "21.03-Khmer: Annotate-partitions",
-  "script_path": "/GUI/conf/scripts/annotate-partitions.sh",
+  "script_path": "conf/scripts/annotate-partitions.sh",
   "description": "Annotate sequences with partition IDs",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Basename",
@@ -10,23 +10,18 @@
     },
     {
       "name": "FAST[AQ] sequence",
+      "type": "file_upload",
       "description": "Input FAST[AQ] sequences to annotate."
     },
     {
-      "name": "Threads",
-      "param": "-T",
-      "description": "Number of simultaneous threads to execute"
+      "name": "Kmer size",
+      "param": "-k",
+      "default": "32",
+      "description": "k-mer size (default: 32)"
     },
     {
       "name": "Other parameters",
       "description": "Other parameters"
-    },
-    {
-      "name": "No big traverse",
-      "param": "--no-big-traverse",
-      "description": "Truncate graph joins at big traversals",
-      "no_value": true,
-      "default": false
     },
     {
       "name": "Help",

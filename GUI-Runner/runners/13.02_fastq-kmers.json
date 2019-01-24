@@ -1,17 +1,20 @@
 {
   "name": "13.02-Fastq-tools: Fastq-kmers",
-  "script_path": "/GUI/conf/scripts/fastq-kmers.sh",
+  "script_path": "conf/scripts/fastq-kmers.sh",
   "description": "Print kmer counts for the given kmer size. Output is in two tab-seperated columns for kmer and frequency",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Input file",
-      "param": "Input file"
+      "type": "file_upload"
     },
     {
       "name": "Kmer size",
-      "param": "k",
+      "param": "-k",
+      "type": "int",
       "description": "kmer size (default: 1)",
+      "min": "1",
+      "max": "16",
       "default": "1"
     },
     {

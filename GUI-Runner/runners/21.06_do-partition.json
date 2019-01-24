@@ -1,8 +1,8 @@
 {
   "name": "21.06-Khmer: Do-partition",
-  "script_path": "/GUI/conf/scripts/do-partition.sh",
+  "script_path": "conf/scripts/do-partition.sh",
   "description": "Load, partition, and annotate FAST[AQ] sequences",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Graphbase",
@@ -10,6 +10,7 @@
     },
     {
       "name": "FAST[AQ] sequence",
+      "type": "file_upload",
       "description": "Input FAST[AQ] sequence filenames."
     },
     {
@@ -33,6 +34,11 @@
       "description": "Number of simultaneous threads to execute"
     },
     {
+      "name": "Subset size",
+      "param": "-s",
+      "description": "Set subset size (usually 1e5-1e6 is good)"
+    },
+    {
       "name": "Other parameters",
       "description": "Other parameters"
     },
@@ -40,6 +46,13 @@
       "name": "No big traverse",
       "param": "--no-big-traverse",
       "description": "Truncate graph joins at big traversals",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Keep subsets",
+      "param": "--keep-subsets",
+      "description": "Keep individual subsets",
       "no_value": true,
       "default": false
     },

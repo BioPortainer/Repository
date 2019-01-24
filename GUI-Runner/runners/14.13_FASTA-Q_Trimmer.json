@@ -1,12 +1,13 @@
 {
   "name": "14.13-Fastx tool kit: FASTA-Q trimmer",
-  "script_path": "/GUI/conf/scripts/D6_FASTA-Q_Trimmer.sh",
+  "script_path": "conf/scripts/D6_FASTA-Q_Trimmer.sh",
   "description": "Shortening reads in a FASTQ or FASTQ files (removing barcodes or noise)",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Input",
       "param": "-i",
+      "type": "file_upload",
       "required": true,
       "description": "FASTA/Q input file. default is STDIN"
     },
@@ -19,18 +20,23 @@
     {
       "name": "1st to keep",
       "param": "-f",
-      "required": true,
       "description": "First base to keep"
     },
         {
       "name": "Last to keep",
       "param": "-l",
-      "required": true,
       "description": "Last base to keep"
     },
     {
       "name": "Other Parameters",
       "description": "Other Parameters"
+    },
+    {
+      "name": "GZIP",
+      "param": "-z",
+      "no_value": true,
+      "default": false,
+      "description": "Compress output with GZIP"
     },
     {
       "name": "Help",

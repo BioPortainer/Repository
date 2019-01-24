@@ -1,12 +1,13 @@
 {
   "name": "14.06-Fastx tool kit: FASTQ-A artifacts filter",
-  "script_path": "/GUI/conf/scripts/D9_FASTQ-A_Artifacts_Filter.sh",
+  "script_path": "conf/scripts/D9_FASTQ-A_Artifacts_Filter.sh",
   "description": "Remove artifacts in FAST Q/A",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Input",
       "param": "-i",
+      "type": "file_upload",
       "required": true,
       "description": "FASTA/Q input file. default is STDIN"
     },
@@ -19,6 +20,20 @@
     {
       "name": "Other Parameters",
       "description": "Other Parameters"
+    },
+    {
+      "name": "GZIP",
+      "param": "-z",
+      "no_value": true,
+      "default": false,
+      "description": "Compress output with GZIP"
+    },
+    {
+      "name": "Verbose",
+      "param": "-v",
+      "no_value": true,
+      "default": false,
+      "description": "Verbose - report number of sequences. If [-o] is specified,  report will be printed to STDOUT. If [-o] is not specified (and output goes to STDOUT), report will be printed to STDERR"
     },
     {
       "name": "Help",

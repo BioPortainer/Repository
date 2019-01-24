@@ -1,20 +1,37 @@
 {
-  "name": "09.08-Deeptools: computeMatrix scale-regions",
-  "script_path": "/GUI/conf/scripts/computeMatrix_scale-regions.sh",
+  "name": "09.08-Deeptools: computeMatrix-scale-regions",
+  "script_path": "conf/scripts/computeMatrix_scale-regions.sh",
   "description": "For computing the signal over a set of regions (scale-regions) where all regions are scaled to the same size",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
-      "name": "Regions FileName",
-      "param": "--regionsFileName",
-      "description": "File name or names, in BED or GTF format, containingthe regions to plot. If multiple bed files are given,each one is considered a group that can be plottedseparately. Also, adding a '# symbol in the bed filecauses all the regions until the previous '#' to beconsidered one group. (default: None)",
-      "type": "text"
+      "name": "Regions",
+      "param": "-R",
+      "required": true,
+      "type": "file_upload",
+      "description": "File name or names, in BED or GTF format, containingthe regions to plot. If multiple bed files are given,each one is considered a group that can be plottedseparately. Also, adding a '# symbol in the bed filecauses all the regions until the previous '#' to beconsidered one group"
     },
     {
-      "name": "Score FileName",
-      "param": "--scoreFileName",
-      "description": "bigWig file(s) containing the scores to be plotted.Multiple files should be separated by spaced. BigWigfiles can be obtained by using the bamCoverage orbamCompare tools. More information about the bigWigfile format can be found athttp://genome.ucsc.edu/goldenPath/help/bigWig.html(default: None)",
-      "type": "text"
+      "name": "Score",
+      "param": "-S",
+      "type": "file_upload",
+      "required": true,
+      "description": "BigWig file(s) containing the scores to be plotted.Multiple files should be separated by spaced. BigWigfiles can be obtained by using the bamCoverage orbamCompare tools. More information about the bigWigfile format can be found athttp://genome.ucsc.edu/goldenPath/help/bigWig.html"
+    },
+    {
+      "name": "Output",
+      "param": "-o",
+      "description": "File name to save the gzipped matrix file needed by the “plotHeatmap” and “plotProfile” tools"
+    },
+    {
+      "name": "Output matrix",
+      "param": " --outFileNameMatrix",
+      "description": "If this option is given, then the matrix of values underlying the heatmap will be saved using the indicated name, e.g. IndividualValues.tab.This matrix can easily be loaded into R or other programs"
+    },
+    {
+      "name": "Output sorted regions",
+      "param": "--outFileSortedRegions",
+      "description": "File name in which the regions are saved after skiping zeros or min/max threshold values. The order of the regions in the file follows the sorting order selected. This is useful, for example, to generate other heatmaps keeping the sorting of the first heatmap. Example: Heatmap1sortedRegions.bed"
     },
     {
       "name": "Other parameters",

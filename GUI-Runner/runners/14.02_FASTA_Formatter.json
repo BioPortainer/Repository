@@ -1,25 +1,46 @@
 {
   "name": "14.02-Fastx tool kit: FASTA formatter",
-  "script_path": "/GUI/conf/scripts/D12_FASTA_Formatter.sh",
+  "script_path": "conf/scripts/D12_FASTA_Formatter.sh",
   "description": "Changes the width of sequences line in a FASTA file",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Input",
       "param": "-i",
+      "type": "file_upload",
       "required": true,
       "description": "FASTA/Q input file. default is STDIN"
     },
     {
-      "name": "Output",
+      "name": "Output FASTA/FASTQ",
       "param": "-o",
       "required": true,
       "description": "FASTA/Q output file. default is STDOUT"
     },
-    
+    {
+      "name": "Seq line width",
+      "param": "-w",
+      "default": "0",
+      "required": true,
+      "description": "Max. sequence line width for output FASTA file. When ZERO (the default), sequence lines will NOT be wrapped - all nucleotides of each sequences will appear on a single line (good for scripting)"
+    },
     {
       "name": "Other Parameters",
       "description": "Other Parameters"
+    },
+    {
+      "name": "Output tabular",
+      "param": "-t",
+      "no_value": true,
+      "default": false,
+      "description": "Output tabulated format (instead of FASTA format). Sequence-Identifiers will be on first column, Nucleotides will appear on second column (as single line)"
+    },
+    {
+      "name": "Output empty",
+      "param": "-e",
+      "no_value": true,
+      "default": false,
+      "description": "Output empty sequences (default is to discard them). Empty sequences are ones who have only a sequence identifier, but not actual nucleotides"
     },
     {
       "name": "Help",

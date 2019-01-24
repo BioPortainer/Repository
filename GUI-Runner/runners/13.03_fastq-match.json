@@ -1,16 +1,17 @@
 {
   "name": "13.03-Fastq-tools: Fastq-match",
-  "script_path": "/GUI/conf/scripts/fastq-match.sh",
+  "script_path": "conf/scripts/fastq-match.sh",
   "description": "Perform Smith-Waterman local alignment of a query sequence against each sequence in a fastq file",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
-    {
-      "name": "Input fastq",
-      "description": "Input fastq"
-    },
     {
       "name": "Query sequence",
       "description": "Query sequence"
+    },
+    {
+      "name": "Input fastq",
+      "type": "file_upload",
+      "description": "Input fastq"
     },
     {
       "name": "Help",

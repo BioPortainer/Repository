@@ -1,15 +1,17 @@
 {
   "name": "12-Fastq-join",
-  "script_path": "/GUI/conf/scripts/fastq-join.sh",
+  "script_path": "conf/scripts/fastq-join.sh",
   "description": "Joins two paired-end reads on the overlapping ends",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Read1.fq",
+      "type": "file_upload",
       "description": "Read1.fq"
     },
     {
       "name": "Read2.fq",
+      "type": "file_upload",
       "description": "Read2.fq"
     },
     {

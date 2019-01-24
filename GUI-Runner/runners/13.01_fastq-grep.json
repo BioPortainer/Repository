@@ -1,17 +1,26 @@
 {
   "name": "13.01-Fastq-tools: Fastq-grep",
-  "script_path": "/GUI/conf/scripts/fastq-grep.sh",
-  "description": "Find reads matching a regular-expression",
-  "working_directory": "/root/workdir/data",
+  "script_path": "conf/scripts/fastq-grep.sh",
+  "description": "Given a PATTERN, specified as a perl-compatible regular expression, print every FASTQ entry with a matching nucleotide sequence",
+  "working_directory": "./",
   "parameters": [
+    {
+      "name": "PATTERN",
+      "description": "PATTERN, by default, is a perl compatible regular expression"
+    },
+    {
+      "name": "File input",
+      "type": "file_upload",
+      "description": "File input"
+    },
     {
       "name": "Output mismatch",
       "param": "-m",
-      "description": "output mismatching entries to the given file"
+      "description": "Output mismatching entries to the given file"
     },
     {
       "name": "Invert match",
-      "param": "-i",
+      "param": "-v",
       "description": "Select nonmatching entries",
       "no_value": true,
       "deafult": false
@@ -53,7 +62,7 @@
     },
     {
       "name": "Version",
-      "param": "-v",
+      "param": "-V",
       "description": "Output version information and exit",
       "no_value": true,
       "deafult": false

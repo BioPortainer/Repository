@@ -1,25 +1,19 @@
 {
   "name": "20.01-Kallisto: Kallisto h5dump",
-  "script_path": "/GUI/conf/scripts/kallisto_h5dump.sh",
+  "script_path": "conf/scripts/kallisto_h5dump.sh",
   "description": "Converts HDF5-formatted results to plaintext",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
+    {
+      "name": "HDF5 input",
+      "type": "file_upload",
+      "description": "HDF5 input"
+    },
     {
       "name": "Output Directory",
       "param": "-o",
       "required": true,
       "description": "Directory to write output to"
-    },
-    {
-      "name": "HDF5 input",
-      "description": "HDF5 input"
-    },
-    {
-      "name": "Help",
-      "param": "-h",
-      "description": "Helpful help screen",
-      "no_value": true,
-      "default": false
     }
   ]
 }

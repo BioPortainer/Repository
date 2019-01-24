@@ -1,9 +1,15 @@
 {
   "name": "20.02-Kallisto: Kallisto index",
-  "script_path": "/GUI/conf/scripts/kallisto_index.sh",
+  "script_path": "conf/scripts/kallisto_index.sh",
   "description": "Kallisto index builds an index from a FASTA formatted file of target sequences",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
+    {
+      "name": "Input fasta",
+      "type": "file_upload",
+      "required": true,
+      "description": "Input fasta"
+    },
     {
       "name": "Index filename",
       "param": "-i",
@@ -19,18 +25,13 @@
     {
       "name": "Unique names",
       "param": "--make-unique",
-      "description": "Replace repeated target names with unique names"
+      "description": "Replace repeated target names with unique names",
+      "no_value": true,
+      "default": false
     },
     {
       "name": "Other parameters",
       "description": "Other parameters"
-    },
-    {
-      "name": "Help",
-      "param": "-h",
-      "description": "Helpful help screen",
-      "no_value": true,
-      "default": false
     }
   ]
 }

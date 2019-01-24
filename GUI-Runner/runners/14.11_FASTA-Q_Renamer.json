@@ -1,12 +1,13 @@
 {
   "name": "14.11-Fastx tool kit: FASTA-Q renamer",
-  "script_path": "/GUI/conf/scripts/D7_FASTA-Q_Renamer.sh",
+  "script_path": "conf/scripts/D7_FASTA-Q_Renamer.sh",
   "description": "Renames the sequence identifiers in FASTQ/A file",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Input",
       "param": "-i",
+      "type": "file_upload",
       "required": true,
       "description": "FASTA/Q input file. default is STDIN"
     },
@@ -30,6 +31,13 @@
     {
       "name": "Other Parameters",
       "description": "Other Parameters"
+    },
+    {
+      "name": "GZIP",
+      "param": "-z",
+      "no_value": true,
+      "default": false,
+      "description": "Compress output with GZIP"
     },
     {
       "name": "Help",

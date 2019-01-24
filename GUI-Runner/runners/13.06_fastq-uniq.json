@@ -1,11 +1,12 @@
 {
   "name": "13.06-Fastq-tools: Fastq-uniq",
-  "script_path": "/GUI/conf/scripts/fastq-uniq.sh",
+  "script_path": "conf/scripts/fastq-uniq.sh",
   "description": "Output a non-redundant FASTQ file, in which there are no duplicate reads. (Warning: this program can be somewhat memory intensive)",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
-      "name": "Output fastq",
+      "name": "Input fastq",
+      "type": "file_upload",
       "description": "Input fastq"
     },
     {

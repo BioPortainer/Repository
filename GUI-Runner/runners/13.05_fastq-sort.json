@@ -1,35 +1,70 @@
 {
   "name": "13.05-Fastq-tools: Fastq-sort",
-  "script_path": "/GUI/conf/scripts/fastq-sort.sh",
+  "script_path": "conf/scripts/fastq-sort.sh",
   "description": "Concatenate and sort FASTQ files and write to standard output",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
-      "name": "Reverse",
-      "param": "-r",
-      "description": "Sort in reverse (i.e., descending) order"
-    },
-    {
-      "name": "By id",
-      "param": "-I",
-      "description": "Sort alphabetically by read identifier"
-    },
-    {
-      "name": "Numerical",
-      "param": "-N",
-      "description": "Sort alphanumerically by read identifier according to 'samtools sort -n'"
-    },
-    {
-      "name": "Sequence",
-      "param": "-S",
-      "description": "Sort alphabetically by sequence"
+      "name": "Input file",
+      "type": "file_upload",
+      "description": "Input file"
     },
     {
       "name": "Other parameters",
       "description": "Other parameters"
     },
     {
+      "name": "Reverse",
+      "param": "-r",
+      "no_value": true,
+      "default": false,
+      "description": "Sort in reverse (i.e., descending) order"
+    },
+    {
+      "name": "By id",
+      "param": "--id",
+      "no_value": true,
+      "default": false,
+      "description": "Sort alphabetically by read identifier"
+    },
+    {
+      "name": "Numerical",
+      "param": "--idn",
+      "no_value": true,
+      "default": false,
+      "description": "Sort alphanumerically by read identifier according to 'samtools sort -n'"
+    },
+    {
+      "name": "Sequence",
+      "param": "--seq",
+      "no_value": true,
+      "default": false,
+      "description": "Sort alphabetically by sequence"
+    },
+    {
+      "name": "Random",
+      "param": "-R",
+      "no_value": true,
+      "default": false,
+      "description": "Randomly shuffle the sequences"
+    },
+    {
+      "name": "GC",
+      "param": "-G",
+      "no_value": true,
+      "default": false,
+      "description": "Sort by GC content"
+    },
+    {
+      "name": "Mean quality",
+      "param": "--mean-qual",
+      "no_value": true,
+      "default": false,
+      "description": "Sort by median quality score"
+    },
+    {
       "name": "Help",
+      "param": "-h",
       "description": "Print the help",
       "no_value": true,
       "default": false

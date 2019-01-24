@@ -1,12 +1,13 @@
 {
   "name": "14.12-Fastx tool kit: FASTQ-A reverse complement",
-  "script_path": "/GUI/conf/scripts/D11_FASTQ-A_Reverse_Complement.sh",
+  "script_path": "conf/scripts/D11_FASTQ-A_Reverse_Complement.sh",
   "description": "Produce the reverse-complement of each sequence in a FASTQ/FASTA file",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Input",
       "param": "-i",
+      "type": "file_upload",
       "required": true,
       "description": "FASTA/Q input file. default is STDIN"
     },
@@ -19,6 +20,13 @@
     {
       "name": "Other Parameters",
       "description": "Other Parameters"
+    },
+    {
+      "name": "GZIP",
+      "param": "-z",
+      "no_value": true,
+      "default": false,
+      "description": "Compress output with GZIP"
     },
     {
       "name": "Help",

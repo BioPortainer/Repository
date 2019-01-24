@@ -1,12 +1,13 @@
 {
   "name": "14.08-Fastx tool kit: FASTA-Q collapser",
-  "script_path": "/GUI/conf/scripts/D8_FASTA-Q_Collapser.sh",
+  "script_path": "conf/scripts/D8_FASTA-Q_Collapser.sh",
   "description": "Collapse identical sequences in a FASTQ/A file into a single sequence (while maintaining reads counts)",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Input",
       "param": "-i",
+      "type": "file_upload",
       "required": true,
       "description": "FASTA/Q input file. default is STDIN"
     },
@@ -19,6 +20,13 @@
     {
       "name": "Other Parameters",
       "description": "Other Parameters"
+    },
+    {
+      "name": "Verbose",
+      "param": "-v",
+      "no_value": true,
+      "default": false,
+      "description": "Verbose - report number of sequences. If [-o] is specified,  report will be printed to STDOUT. If [-o] is not specified (and output goes to STDOUT), report will be printed to STDERR"
     },
     {
       "name": "Help",

@@ -1,18 +1,18 @@
 {
   "name": "09.04-Deeptools: bamPEFragmentSize",
-  "script_path": "/GUI/conf/scripts/bamPEFragmentSize.sh",
+  "script_path": "conf/scripts/bamPEFragmentSize.sh",
   "description": "This tool calculates the fragment sizes for read pairs given a BAM file from paired-end sequencing",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
-      "name": "List of BAM files",
-      "param": "--bamfiles",
+      "name": "BAM input",
+      "param": "-b",
       "description": "List of BAM files to process."
     },
     {
-      "name": "Histogram .png file",
-      "param": "--histogram",
-      "description": "  Save a .png file with a histogram of the fragment length distribution."
+      "name": "Histogram output",
+      "param": "-o",
+      "description": "Save a .png file with a histogram of the fragment length distribution."
     },
     {
       "name": "Image type",
@@ -28,18 +28,19 @@
       ]
     },
     {
-      "name": "Labels for the samples",
-      "param": "--samplesLabel",
-      "description": "Labels for the samples plotted. The default is to use the file name of the sample."
+      "name": "Processors",
+      "param": "-p",
+      "default": "1",
+      "description": "Number of processors to use. The default is to use 1."
     },
     {
       "name": "Labels for the samples",
       "param": "--samplesLabel",
-      "description": "Labels for the samples plotted. The default is to use the file name of the sample."
+      "description": "Labels for the samples plotted. The default is to use the file name of the sample. The sample labels should be separated by spaces and quoted if a label itselfcontains a space E.g. –samplesLabel label-1 'label 2'"
     },
     {
       "name": "Plot title",
-      "param": "--plotTitle",
+      "param": "-T",
       "description": "Title of the plot, to be printed on top of the generated image."
     },
     {
@@ -48,22 +49,23 @@
       "description": "The maximum fragment length in the histogram."
     },
     {
-      "name": "Length in bases",
-      "param": "--binSize",
+      "name": "Bin size",
+      "param": "-bs",
       "description": "Length in bases of the window used to sample the genome. (default 1000)"
     },
     {
-      "name": "Distance between bins",
-      "param": "--distanceBetweenBins",
+      "name": "Dist. between bins",
+      "param": "-n",
       "description": "This option allows you to set the distance between bins actually sampled from."
     },
     {
-      "name": "Regions to be excluded",
-      "param": "--blackListFileName",
-      "description": "TA BED file containing regions that should be excluded from all analyses."
+      "name": "Black list",
+      "type": "file_upload",
+      "param": "-bl",
+      "description": "A BED file containing regions that should be excluded from all analyses. Currently this works by rejecting genomic chunks that happen to overlap an entry. Consequently, for BAM files, if a read partially overlaps a blacklisted region or a fragment spans over it, then the read/fragment might still be considered"
     },
     {
-      "name": "Additional table",
+      "name": "Table",
       "param": "--table",
       "description": "In addition to printing read and fragment length metrics to the screen, write them to the given file in tabular format."
     },
@@ -75,6 +77,27 @@
     {
       "name": "Other parameters",
       "description": "Other parameters"
+    },
+    {
+      "name": "Log scale",
+      "param": "--logScale",
+      "description": "Plot on the log scale",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Verbose",
+      "param": "--verbose",
+      "description": "Set if processing data messages are wanted",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Version",
+      "param": "--version",
+      "description": "Show program’s version number and exit",
+      "no_value": true,
+      "default": false
     },
     {
       "name": "Help",

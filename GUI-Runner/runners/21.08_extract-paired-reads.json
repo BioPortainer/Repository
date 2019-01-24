@@ -1,16 +1,46 @@
 {
   "name": "21.08-Khmer: Extract-paired-reads",
-  "script_path": "/GUI/conf/scripts/extract-paired-reads.sh",
+  "script_path": "conf/scripts/extract-paired-reads.sh",
   "description": "Take a mixture of reads and split into pairs and orphans",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
-      "name": "Infile",
-      "description": "Infile: The output is two files, <input file>.pe and <input file>.se, placed in the current directory. The .pe file contains interleaved and properly paired sequences, while the .se file contains orphan sequences"
+      "name": "Input file",
+      "type": "file_upload",
+      "description": "Input file"
+    },
+    {
+      "name": "Output_dir",
+      "param": "-d",
+      "description": "Output split reads to specified directory. Creates directory if necessary"
+    },
+    {
+      "name": "Output paired",
+      "param": "-p",
+      "description": "Output paired reads to this file"
+    },
+    {
+      "name": "Output single",
+      "param": "-s",
+      "description": "Output orphaned reads to this file"
     },
     {
       "name": "Other parameters",
       "description": "Other parameters"
+    },
+    {
+      "name": "Gzip",
+      "param": "--gzip",
+      "description": "Compress output using gzip",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Bzip",
+      "param": "--bzip",
+      "description": "Compress output using bzip2",
+      "no_value": true,
+      "default": false
     },
     {
       "name": "Help",

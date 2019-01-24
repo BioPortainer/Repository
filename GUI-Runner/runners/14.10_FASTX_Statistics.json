@@ -1,12 +1,13 @@
 {
   "name": "14.10-Fastx tool kit: FASTX statistics",
-  "script_path": "/GUI/conf/scripts/D2_FASTX_Statistics.sh",
+  "script_path": "conf/scripts/D2_FASTX_Statistics.sh",
   "description": "Output quality statistics from FASTQ file in tab delimited text",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Input",
       "param": "-i",
+      "type": "file_upload",
       "required": true,
       "description": "FASTA/Q input file. default is STDIN. If FASTA file is given, only nucleotides distribution is calculated (there's no quality info)"
     },

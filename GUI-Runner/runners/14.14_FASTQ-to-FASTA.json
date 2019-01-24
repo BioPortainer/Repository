@@ -1,12 +1,13 @@
 {
   "name": "14.14-Fastx tool kit: FASTQ to FASTA",
-  "script_path": "/GUI/conf/scripts/D1_FASTQ-to-FASTA.sh",
+  "script_path": "conf/scripts/D1_FASTQ-to-FASTA.sh",
   "description": "Convert FASTQ files to FASTA files",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Input",
       "param": "-i",
+      "type": "file_upload",
       "required": true,
       "description": "FASTA/Q input file. default is STDIN"
     },
@@ -19,6 +20,34 @@
     {
       "name": "Other parameters",
       "description": "Other parameters"
+    },
+    {
+      "name": "GZIP",
+      "param": "-z",
+      "no_value": true,
+      "default": false,
+      "description": "Compress output with GZIP"
+    },
+    {
+      "name": "Verbose",
+      "param": "-v",
+      "no_value": true,
+      "default": false,
+      "description": "Verbose - report number of sequences. If [-o] is specified,  report will be printed to STDOUT. If [-o] is not specified (and output goes to STDOUT), report will be printed to STDERR"
+    },
+    {
+      "name": "Rename",
+      "param": "-r",
+      "no_value": true,
+      "default": false,
+      "description": "Rename sequence identifiers to numbers"
+    },
+    {
+      "name": "Unknown",
+      "param": "-n",
+      "no_value": true,
+      "default": false,
+      "description": "Keep sequences with unknown (N) nucleotides"
     },
     {
       "name": "Help",

@@ -1,8 +1,8 @@
 {
 	"name": "10-FASTA_Splitter",
-	"script_path": "/GUI/conf/scripts/R3.FASTA_Splitter.sh",
+	"script_path": "conf/scripts/R3.FASTA_Splitter.sh",
 	"description": "Divides a large FASTA file into a set of smaller, approximately equally sized files. It works with whole sequences, never dividing a sequence in the middle",
-	"working_directory": "/root/workdir/data",
+	"working_directory": "./",
 	"parameters": [
 		{
 			"name": "Input file",
@@ -13,7 +13,6 @@
 			"name": "N Parts",
 			"param": "--n-parts",
 			"type": "int",
-			"required": true,
 			"description": "Divide into <N> parts"
 		},
 		{
@@ -28,6 +27,7 @@
 			"param": "--measure",
 			"description": "Specify whats is used for determining part sizes",
 			"type": "list",
+			"default": "all",
 			"values": [
 				"all",
 				"seq",

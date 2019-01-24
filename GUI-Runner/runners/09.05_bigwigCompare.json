@@ -1,48 +1,100 @@
 {
   "name": "09.05-Deeptools: bigwigCompare",
-  "script_path": "/GUI/conf/scripts/bigwigCompare.sh",
+  "script_path": "conf/scripts/bigwigCompare.sh",
   "description": "Normalizes and compares two bigWig files to obtain the ratio, log2ratio or difference between them",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Bigwig file 1",
-      "param": "--bigwig1",
-      "description": "Bigwig file 1. Usually the file for the treatment. (default: None)",
-      "type": "text"
+      "param": "-b1",
+      "description": "Bigwig file 1. Usually the file for the treatment",
+      "type": "file_upload"
     },
     {
       "name": "Bigwig file 2",
-      "param": "--bigwig2",
-      "description": "Bigwig file 2. Usually the file for the control. (default: None)",
-      "type": "text"
+      "param": "-b2",
+      "description": "Bigwig file 2. Usually the file for the control",
+      "type": "file_upload"
+    },
+    {
+      "name": "Output file",
+      "param": "-o",
+      "description": "Output file name"
+    },
+    {
+      "name": "Output format",
+      "param": "-of",
+      "description": "Output file type. Either 'bigwig' or 'bedgraph'",
+      "type": "list",
+      "values": [
+        "bigwig",
+        "bedgraph"
+      ]
     },
     {
       "name": "Scale Factors",
       "param": "--scaleFactors",
-      "description": "Set this parameter to multipy the bigwig values by a constant. The format is scaleFactor1:scaleFactor2. For example 0.7:1 to scale the first bigwig file by 0.7 while not scaling the second bigwig file (default:None)",
-      "type": "text"
+      "description": "Set this parameter to multipy the bigwig values by a constant. The format is scaleFactor1:scaleFactor2. For example 0.7:1 to scale the first bigwig file by 0.7 while not scaling the second bigwig file"
     },
     {
       "name": "Pseudo count",
       "param": "--pseudocount",
-      "description": "small number to avoid x/0. Only useful when ratio = log2 or ratio (default: 1)",
-      "type": "text"
+      "description": "Small number to avoid x/0. Only useful when ratio = log2 or ratio (default: 1)"
     },
     {
       "name": "Operation",
       "param": "--operation",
       "description": "The default is to output the log2ratio of the twosamples. The reciprocal ratio returns the the negativeof the inverse of the ratio if the ratio is less than0. The resulting values are interpreted as negative fold changes. *NOTE*: Only with --operation subtract can --normalizeUsing RPGC or --normalizeUsing RPKM be used. Instead of performing a computation using both files, the scaled signal can alternatively be output for the first or second file using the '--operation first' or '--operation second' (default: log2)",
-      "type": "text"
+      "type": "list",
+      "values": [
+        "log2",
+        "ratio",
+        "subtract",
+        "add",
+        "mean",
+        "reciprocal_ratio",
+        "first",
+        "second"
+      ]
     },
     {
-      "name": "NonCovered Regions",
-      "param": "--skipNonCoveredRegions",
-      "description": "This parameter determines if non-covered regions(regions without a score) in the bigWig files shouldbe skipped. The default is to treat those regions ashaving a value of zero. The decision to skip non-covered regions depends on the interpretation of theworkdir/data. Non-covered regions in a bigWig file mayrepresent repetitive regions that should be skipped.Alternatively, the interpretation of non-coveredregions as zeros may be wrong and this option shouldbe used (default: False)",
-      "type": "text"
+      "name": "Bin size",
+      "param": "-bs",
+      "description": "Size of the bins, in bases, for the output of the bigwig/bedgraph file"
+    },
+    {
+      "name": "Region",
+      "param": "-r",
+      "description": "Region of the genome to limit the operation to - this is useful when testing parameters to reduce the computing time. The format is chr:start:end, for example –region chr10 or –region chr10:456700:891000"
+    },
+    {
+      "name": "Black list",
+      "param": "-bl",
+      "description": "A BED or GTF file containing regions that should be excluded from all analyses. Currently this works by rejecting genomic chunks that happen to overlap an entry. Consequently, for BAM files, if a read partially overlaps a blacklisted region or a fragment spans over it, then the read/fragment might still be considered. Please note that you should adjust the effective genome size, if relevant",
+      "type": "file_upload"
+    },
+    {
+      "name": "Processors",
+      "param": "-p",
+      "description": "Number of processors to use. Type “max/2” to use half the maximum number of processors or “max” to use all available processors"
     },
     {
       "name": "Other parameters",
       "description": "Other parameters"
+    },
+    {
+      "name": "NonCovered Regions",
+      "param": "--skipNonCoveredRegions",
+      "description": "This parameter determines if non-covered regions(regions without a score) in the bigWig files shouldbe skipped. The default is to treat those regions ashaving a value of zero. The decision to skip non-covered regions depends on the interpretation of theworkdir/data. Non-covered regions in a bigWig file mayrepresent repetitive regions that should be skipped.Alternatively, the interpretation of non-coveredregions as zeros may be wrong and this option should be used (default: False)",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Verbose",
+      "param": "-v",
+      "description": "Set to see processing messages.",
+      "no_value": true,
+      "default": false
     },
     {
       "name": "Help",

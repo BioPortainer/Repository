@@ -1,11 +1,12 @@
 {
   "name": "21.20-Khmer: Normalize-by-median",
-  "script_path": "/GUI/conf/scripts/normalize-by-median.sh",
+  "script_path": "conf/scripts/normalize-by-median.sh",
   "description": "Do digital normalization (remove mostly redundant sequences)",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "FAST[AQ] input",
+      "type": "file_upload",
       "description": "Input FAST[AQ] sequence filename"
     },
     {
@@ -22,11 +23,6 @@
       "name": "Unique",
       "param": "-U",
       "description": "Approximate number of unique kmers in the input set"
-    },
-    {
-      "name": "Threads",
-      "param": "-T",
-      "description": "k-mer size to use"
     },
     {
       "name": "Max memmory",
@@ -60,6 +56,20 @@
       "name": "Small count",
       "param": "--small-count",
       "description": "Reduce memory usage by using a smaller counter for individual kmers",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Gzip",
+      "param": "--gzip",
+      "description": "Compress output using gzip",
+      "no_value": true,
+      "default": false
+    },
+    {
+      "name": "Bzip",
+      "param": "--bzip",
+      "description": "Compress output using bzip2",
       "no_value": true,
       "default": false
     },

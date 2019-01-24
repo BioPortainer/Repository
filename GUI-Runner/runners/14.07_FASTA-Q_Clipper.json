@@ -1,12 +1,13 @@
 {
   "name": "14.07-Fastx tool kit: FASTA-Q clipper",
-  "script_path": "/GUI/conf/scripts/D5_FASTA-Q_Clipper.sh",
+  "script_path": "conf/scripts/D5_FASTA-Q_Clipper.sh",
   "description": "Remove sequencing adapters/linkers",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "Input",
       "param": "-i",
+      "type": "file_upload",
       "required": true,
       "description": "FASTA/Q input file. default is STDIN"
     },
@@ -19,22 +20,71 @@
     {
       "name": "Adapter",
       "param": "-a",
+      "default": "CCTTAAGG",
       "description": "ADAPTER string. default is CCTTAAGG (dummy adapter)"
     },
     {
-      "name": "Bases keep",
+      "name": "Keep after",
       "param": "-d",
       "description": "Keep the adapter and N bases after it. (using '-d 0' is the same as not using '-d' at all. which is the default)."
     },
     {
       "name": "Min lenght",
       "param": "-l",
-      "required": true,
       "description": "Discard sequences shorter than N nucleotides. default is 5)"
     },
     {
       "name": "Other Parameters",
       "description": "Other Parameters"
+    },
+    {
+      "name": "Clipped only",
+      "param": "-c",
+      "no_value": true,
+      "default": false,
+      "description": "Discard non-clipped sequences (i.e. - keep only sequences which contained the adapter)"
+    },
+    {
+      "name": "Non-clipped only",
+      "param": "-C",
+      "no_value": true,
+      "default": false,
+      "description": "Discard non-clipped sequences (i.e. - keep only sequences which contained the adapter)"
+    },
+    {
+      "name": "Adapter-only",
+      "param": "-k",
+      "no_value": true,
+      "default": false,
+      "description": "Report Adapter-Only sequences"
+    },
+    {
+      "name": "Unknown",
+      "param": "-n",
+      "no_value": true,
+      "default": false,
+      "description": "keep sequences with unknown (N) nucleotides. default is to discard such sequences"
+    },
+    {
+      "name": "GZIP",
+      "param": "-z",
+      "no_value": true,
+      "default": false,
+      "description": "Compress output with GZIP"
+    },
+    {
+      "name": "Verbose",
+      "param": "-v",
+      "no_value": true,
+      "default": false,
+      "description": "Verbose - report number of sequences. If [-o] is specified,  report will be printed to STDOUT. If [-o] is not specified (and output goes to STDOUT), report will be printed to STDERR"
+    },
+    {
+      "name": "Debug output",
+      "param": "-D",
+      "no_value": true,
+      "default": false,
+      "description": "Debug output"
     },
     {
       "name": "Help",

@@ -1,22 +1,125 @@
 {
   "name": "09.01-Deeptools: alignmentSieve",
-  "script_path": "/GUI/conf/scripts/alignmentSieve.sh",
+  "script_path": "conf/scripts/alignmentSieve.sh",
   "description": "Filters alignments in a BAM/CRAM file according the the specified parameters. It can optionally output to BEDPE format, possibly with the fragment ends shifted in a custom manner",
-  "working_directory": "/root/workdir/data",
+  "working_directory": "./",
   "parameters": [
     {
       "name": "BAM input",
-      "param": "--bam",
+      "param": "-b",
+      "required": true,
       "description": "An indexed BAM file."
     },
     {
       "name": "Output",
-      "param": "--outFile",
+      "required": true,
+      "param": "-o",
       "description": "The file to write results to. These are the alignments or fragments that pass the filtering criteria."
     },
     {
-      "name": "Other parameters",
-      "description": "Other parameters"
+      "name": "Processors",
+      "param": "-p",
+      "description": "Number of processors to use. Type 'max/2' to use half the maximum number of processors or 'max' to use all available processors"
+    },
+    {
+      "name": "Filter metrics",
+      "param": "--filterMetrics",
+      "description": "The number of entries in total and filtered are saved to this file"
+    },
+    {
+      "name": "Filtered out",
+      "param": "--filteredOutReads",
+      "description": "If desired, all reads NOT passing the filtering criteria can be written to this file"
+    },
+    {
+      "name": "Custom label",
+      "param": "-l",
+      "description": "User defined label instead of the default label (file name)"
+    },
+    {
+      "name": "Smart labels",
+      "param": "--smartLabels",
+      "description": "Instead of manually specifying a labels for the input file, this causes deepTools to use the file name after removing the path and extension"
+    },
+    {
+      "name": "Shift ends",
+      "param": "--shift",
+      "description": "Shift the left and right end of a read (for BAM files) or a fragment (for BED files). A positive value shift an end to the right (on the + strand) and a negative value shifts a fragment to the left. Either 2 or 4 integers can be provided. For example, “2 -3” will shift the left-most fragment end two bases to the right and the right-most end 3 bases to the left. If 4 integers are provided, then the first and last two refer to fragments whose read 1 is on the left or right, respectively. Consequently, it is possible to take strand into consideration for strand-specific protocols. A fragment whose length falls below 1 due to shifting will not be written to the output. See the online documentation for graphical examples. Note that non-properly-paired reads will be filtered"
+    },
+    {
+      "name": "ATAC shift",
+      "param": "--ATACshift",
+      "description": "Shift the produced BAM file or BEDPE regions as commonly done for ATAC-seq. This is equivalent to –shift 4 -5 5 -4"
+    },
+    {
+      "name": "Strand",
+      "param": "--filterRNAstrand",
+      "type": "list",
+      "values": [
+        "forward",
+        "reverse"
+      ],
+      "description": "Selects RNA-seq reads (single-end or paired-end) in the given strand"
+    },
+    {
+      "name": "Min mapping quality",
+      "param": "--minMappingQuality",
+      "description": "If set, only reads that have a mapping quality score of at least this are considered"
+    },
+    {
+      "name": "Sam flag include",
+      "param": "--samFlagInclude",
+      "description": "Include reads based on the SAM flag. For example, to get only reads that are the first mate, use a flag of 64. This is useful to count properly paired reads only once, as otherwise the second mate will be also considered for the coverage"
+    },
+    {
+      "name": "Sam flag exclude",
+      "param": "--samFlagExclude",
+      "description": "Exclude reads based on the SAM flag. For example, to get only reads that map to the forward strand, use –samFlagExclude 16, where 16 is the SAM flag for reads that map to the reverse strand"
+    },
+    {
+      "name": "Black list",
+      "param": "-bl",
+      "type": "file_upload",
+      "description": "A BED or GTF file containing regions that should be excluded from all analyses. Currently this works by rejecting genomic chunks that happen to overlap an entry. Consequently, for BAM files, if a read partially overlaps a blacklisted region or a fragment spans over it, then the read/fragment might still be considered. Please note that you should adjust the effective genome size, if relevant"
+    },
+    {
+      "name": "Min fragment length",
+      "param": "--minFragmentLength",
+      "description": "The minimum fragment length needed for read/pair inclusion. This option is primarily useful in ATACseq experiments, for filtering mono- or di-nucleosome fragments"
+    },
+    {
+      "name": "Max fragment length",
+      "param": "--maxFragmentLength",
+      "description": "The maximum fragment length needed for read/pair inclusion"
+    },
+    {
+      "name": "BED output",
+      "param": "--BED",
+      "no_value": true,
+      "default": false,
+      "description": "Instead of producing BAM files, write output in BEDPE format (as defined by MACS2). Note that only reads/fragments passing filtering criterion are written in BEDPE format"
+    },
+    {
+      "name": "Ignore duplicates",
+      "param": "--ignoreDuplicates",
+      "no_value": true,
+      "default": false,
+      "description": "If set, reads that have the same orientation and start position will be considered only once. If reads are paired, the mate’s position also has to coincide to ignore a read"
+    },
+    {
+      "name": "Help",
+      "no_value": true,
+      "default": false,
+      "description": "Show the help message and exit"
     }
   ]
 }
+
+
+
+
+
+
+
+
+
