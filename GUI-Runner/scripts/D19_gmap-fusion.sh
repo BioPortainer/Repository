@@ -1,0 +1,4 @@
+#!/bin/bash
+
+GMAP-fusion $@
+
