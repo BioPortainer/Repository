@@ -1,4 +1,0 @@
-#!/bin/bash
-
-mapper.pl $@
-
